@@ -46,6 +46,14 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# check if given installation directory path doesn't contain illegal characters
+case "$INSTALL_DIR" in
+    *\|*)
+        echo "$0: '$INSTALL_DIR/' contains '|', uninstallation canceled." >&2
+        exit 1
+        ;;
+esac
+
 # check if installed
 if [ ! -f "$INSTALL_DIR/ux430ua-jack-volume" ]; then
     echo "The program is not installed in '$INSTALL_DIR/', uninstallation canceled."
@@ -58,7 +66,7 @@ fi
 
 # revert 3.5 mm jack output volume setup
 rm -f /lib/systemd/system-sleep/ux430ua-jack-volume
-sed -i -e '\!^[^#]*'"$INSTALL_DIR"'/ux430ua-jack-volume\(\|\s.*\)$!d' /etc/rc.local
+sed -i -e '\|^[^#]*'"'$INSTALL_DIR"'/ux430ua-jack-volume'"'"'|d' /etc/rc.local
 rm -f -- "$INSTALL_DIR/ux430ua-jack-volume"
 
 # final message

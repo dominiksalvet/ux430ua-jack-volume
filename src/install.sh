@@ -30,14 +30,14 @@ done
 # DEFINITIONS
 #-------------------------------------------------------------------------------
 
-# script's parent directory path
-SCRIPT_DIR="$(dirname -- "$0")"
-
 # normalize a path and remove the last slash
 NORMALIZE_PATH='s|/\+|/|g;s|\([^/]*\)/*$|\1|'
 
 # normalize the '$1' argument
 INSTALL_DIR=$(echo "$1" | sed -e "$NORMALIZE_PATH")
+
+# script's parent directory path
+SCRIPT_DIR="$(dirname -- "$0")"
 
 # regular expression of line containing a successful exit of a shell script
 FIND_EXIT_0='^\s*exit\(\|\s\+0\+\)\(\s*\|\s\+#.*\)$'
@@ -51,6 +51,14 @@ if [ "$(id -u)" -ne 0 ]; then
     echo "$0: Please run as root, installation canceled." >&2
     exit 1
 fi
+
+# check if given installation directory path doesn't contain illegal characters
+case "$INSTALL_DIR" in
+    *\|*)
+        echo "$0: '$INSTALL_DIR/' contains '|', installation canceled." >&2
+        exit 1
+        ;;
+esac
 
 # check if given installation directory exists
 if [ ! -d "$INSTALL_DIR/" ]; then
@@ -106,7 +114,7 @@ apt install alsa-tools -y || exit 1
 # apply 3.5 mm jack output volume setup
 echo "$ux430ua_jack_volume_string" > "$INSTALL_DIR/ux430ua-jack-volume"
 chmod a+x "$INSTALL_DIR/ux430ua-jack-volume"
-sed -i -e '0,/'"$FIND_EXIT_0"'/s||'"$INSTALL_DIR"'/ux430ua-jack-volume\n&|' /etc/rc.local
+sed -i -e '0,/'"$FIND_EXIT_0"'/s||'"'$INSTALL_DIR"'/ux430ua-jack-volume'"'"'\n&|' /etc/rc.local
 ln -s -- "$INSTALL_DIR/ux430ua-jack-volume" /lib/systemd/system-sleep/ux430ua-jack-volume
 
 # final message
