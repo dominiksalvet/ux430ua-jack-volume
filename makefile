@@ -34,7 +34,7 @@ export HELP_GENERATOR
 # TARGETS
 #-------------------------------------------------------------------------------
 
-.PHONY: all install uninstall help about
+.PHONY: all install uninstall help
 
 # the default target
 all: help
@@ -50,11 +50,3 @@ help: # display this help
 	@$(ECHO)
 	@$(ECHO) 'TARGET:'
 	@$(SED) -e "$$HELP_GENERATOR" makefile | $(COLUMN) -t -s '#'
-
-about: # display information
-	@$(ECHO) 'ux430ua-jack-volume 1.0.0'
-	@$(ECHO) 'Fix low 3.5 mm jack output audio volume of ASUS ZenBook UX430UA on Linux.'
-	@$(ECHO)
-	@$(ECHO) 'Copyright (C) 2017-2018 Dominik Salvet'
-	@$(ECHO) 'SPDX-License-Identifier: MIT'
-	@$(ECHO) '<https://gitlab.com/dominiksalvet/ux430ua-jack-volume>'

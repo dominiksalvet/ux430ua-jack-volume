@@ -7,6 +7,54 @@
 #-------------------------------------------------------------------------------
 
 
+#-------------------------------------------------------------------------------
+# PROCESSING PARAMETERS
+#-------------------------------------------------------------------------------
+
+HELP_MESSAGE="Usage: $0 [OPTION]...
+
+OPTION:
+  -help   display this help and exit
+  -about  display information and exit"
+
+ABOUT_MESSAGE="$0 1.0.0
+Fix low 3.5 mm jack output audio volume of ASUS ZenBook UX430UA on Linux.
+
+Copyright (C) 2017-2018 Dominik Salvet
+SPDX-License-Identifier: MIT
+<https://gitlab.com/dominiksalvet/ux430ua-jack-volume>"
+
+HINT_MESSAGE="Try \"$0 -help\" for more information."
+
+# processing each parameter
+for i in "$@"; do
+    case "$i" in
+        -help)
+            echo "$HELP_MESSAGE"
+            exit 0
+            ;;
+        -about)
+            echo "$ABOUT_MESSAGE"
+            exit 0
+            ;;
+        *)
+            echo "$0: The option \"$i\" was not recognized." >&2
+            echo "$HINT_MESSAGE" >&2
+            exit 1
+            ;;
+    esac
+done
+
+#-------------------------------------------------------------------------------
+# EXECUTION
+#-------------------------------------------------------------------------------
+
+# check if running as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "$0: Please run as root." >&2
+    exit 1
+fi
+
 # set up output audio jack volume level
 hda-verb /dev/snd/hwC0D0 0x20 SET_COEF_INDEX 0x67
 hda-verb /dev/snd/hwC0D0 0x20 SET_PROC_COEF 0x3000
