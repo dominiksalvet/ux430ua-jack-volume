@@ -37,7 +37,7 @@ NORMALIZE_PATH='s|/\+|/|g;s|\([^/]*\)/*$|\1|'
 INSTALL_DIR=$(echo "$1" | sed -e "$NORMALIZE_PATH")
 
 #-------------------------------------------------------------------------------
-# SET UP ENVIRONMENT
+# CHECK ENVIRONMENT
 #-------------------------------------------------------------------------------
 
 # check if running as root

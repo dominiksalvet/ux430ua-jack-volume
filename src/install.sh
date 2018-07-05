@@ -43,7 +43,7 @@ INSTALL_DIR=$(echo "$1" | sed -e "$NORMALIZE_PATH")
 FIND_EXIT_0='^\s*exit\(\|\s\+0\+\)\(\s*\|\s\+#.*\)$'
 
 #-------------------------------------------------------------------------------
-# SET UP ENVIRONMENT
+# CHECK ENVIRONMENT
 #-------------------------------------------------------------------------------
 
 # check if running as root
@@ -52,13 +52,7 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-# change directory to the script directory
-cd -- "$SCRIPT_DIR/" || {
-    echo "$0: '$SCRIPT_DIR/' should have been existing, installation canceled." >&2
-    exit 1
-}
-
-# check if given directory exists
+# check if given installation directory exists
 if [ ! -d "$INSTALL_DIR/" ]; then
     echo "$0: '$INSTALL_DIR/' doesn't exist, installation canceled." >&2
     exit 1
@@ -69,6 +63,12 @@ if [ -f "$INSTALL_DIR/ux430ua-jack-volume" ]; then
     echo "The program is already installed in '$INSTALL_DIR/', installation canceled."
     exit 0
 fi
+
+# change directory to the script directory
+cd -- "$SCRIPT_DIR/" || {
+    echo "$0: '$SCRIPT_DIR/' should have been existing, installation canceled." >&2
+    exit 1
+}
 
 #-------------------------------------------------------------------------------
 # FILE DEPENDENCIES
