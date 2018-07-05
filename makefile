@@ -19,16 +19,26 @@ COLUMN := column
 SRC_DIR := src
 INSTALL_DIR := /usr/local/bin
 
-# sed script of automatic help generation from target comments
-define HELP_GENERATOR
-/^[a-zA-Z]\+:[a-zA-Z ]*#.*$$/!d
-s/^\s*/  /
-s/\s*:[^#]*//
-s/#\+\s*/#/
-s/#/<U+0023>/2g
-endef
-export HELP_GENERATOR
+#-------------------------------------------------------------------------------
+# HELP GENERATOR
+#-------------------------------------------------------------------------------
 
+# sed script for automatic target descriptions parsing
+define PARSE_TARGET_DESCRIPTIONS
+/^[a-zA-Z0-9]\+\s*:\([a-zA-Z0-9]\|\s\)*#.*$$/!d
+s/^\([a-zA-Z0-9]\+\)[^#]*/\1/
+s/\s*#\+\s*/#/g
+s/^/  /
+endef
+export PARSE_TARGET_DESCRIPTIONS
+
+# function that displays generated help
+define display_generated_help
+	@$(ECHO) 'Usage: make [TARGET]...'
+	@$(ECHO)
+	@$(ECHO) 'TARGET:'
+	@$(SED) -e "$$PARSE_TARGET_DESCRIPTIONS" $(1) | $(COLUMN) -t -s '#'
+endef
 
 #-------------------------------------------------------------------------------
 # TARGETS
@@ -39,14 +49,11 @@ export HELP_GENERATOR
 # the default target
 all: help
 
-install: # launch an installation wizard
-	./$(SRC_DIR)/install.sh $(INSTALL_DIR)
+install: # install the program
+	./$(SRC_DIR)/install.sh '$(INSTALL_DIR)'
 
-uninstall: # launch an uninstallation wizard
-	./$(SRC_DIR)/uninstall.sh $(INSTALL_DIR)
+uninstall: # uninstall the program
+	./$(SRC_DIR)/uninstall.sh '$(INSTALL_DIR)'
 
 help: # display this help
-	@$(ECHO) 'Usage: make [TARGET]...'
-	@$(ECHO)
-	@$(ECHO) 'TARGET:'
-	@$(SED) -e "$$HELP_GENERATOR" makefile | $(COLUMN) -t -s '#'
+	$(call display_generated_help,makefile)
