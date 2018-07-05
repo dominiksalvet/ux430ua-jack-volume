@@ -9,8 +9,8 @@
 # DEFINITIONS
 #-------------------------------------------------------------------------------
 
-# only bash is supported
-SHELL := /bin/bash
+# environment configuration
+SHELL := /bin/sh
 ECHO := echo
 SED := sed
 COLUMN := column

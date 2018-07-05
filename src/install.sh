@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #-------------------------------------------------------------------------------
 # Copyright (C) 2017-2018 Dominik Salvet
@@ -15,7 +15,7 @@
 #-------------------------------------------------------------------------------
 
 # list of required software
-SW_REQUIRED='echo [ id cd dirname read grep cat apt chmod sed ln'
+SW_REQUIRED='echo [ id cd dirname grep cat apt chmod sed ln'
 
 # check if some software is missing
 for i in $SW_REQUIRED; do
@@ -66,7 +66,9 @@ fi
 
 # create "/etc/rc.local" file if it does not exist
 if [ ! -f /etc/rc.local ]; then
-    echo -e '#!/bin/sh -e\n\nexit 0' > /etc/rc.local
+    echo '#!/bin/sh -e
+
+exit 0' > /etc/rc.local
 # append a successful exit if it does not contain one
 elif ! grep -q -e "$FIND_EXIT_0" /etc/rc.local; then
     echo 'exit 0' >> /etc/rc.local
