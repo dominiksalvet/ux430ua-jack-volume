@@ -16,9 +16,9 @@ To install the current stable release of this program **automatically**, open a 
 
 ```sh
 cd ~/Downloads/ &&
-git clone https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git &&
+git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git &&
 cd ux430ua-jack-volume/ &&
-git checkout 1.0.0 &&
+git checkout -q 1.0.0 &&
 sudo make install
 ```
 
@@ -31,10 +31,10 @@ If it is required to **uninstall** the current stable release of this program **
 ```sh
 cd ~/Downloads/ &&
 if [ ! -d ux430ua-jack-volume/ ]; then
-    git clone https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
+    git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
 fi &&
 cd ux430ua-jack-volume/ &&
-git checkout 1.0.0 &&
+git checkout -q 1.0.0 &&
 sudo make uninstall
 ```
 
