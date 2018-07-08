@@ -52,4 +52,4 @@ In case of uninstalling from a custom installation directory, do not forget to u
 
 ## License
 
-This project is licensed under an [Open Source Initiative](https://opensource.org/) approved license, the MIT License. See the [*LICENSE.txt*](LICENSE.txt) file for details. Individual files contain the [SPDX](https://spdx.org/) license identifier instead of the full license text.
+This project is licensed under an [Open Source Initiative](https://opensource.org/) approved license, the MIT License. See the [*LICENSE.md*](LICENSE.md) file for details. Individual files contain the [SPDX](https://spdx.org/) license identifier instead of the full license text.
