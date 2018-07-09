@@ -4,8 +4,8 @@
 
 If you have any suggestions on development of this project, follow these steps:
 
-1. See around issues of the project and **make sure that the same suggestion wasn't already reported**.
-2. If not, open a new issue. In the issue, **try to provide as much relevant information as possible** to make addressing the problem easier.
+1. Take a look issues of the project and **make sure that the same suggestion wasn't already reported**.
+2. If not, open a new issue. In the issue, **try to provide as much relevant information as possible**.
 
 Proceed this way even before direct contribution by creating **a merge request** with your applied suggestion to the project. After the approval, follow these steps:
 
