@@ -117,6 +117,8 @@ chmod a+x "$INSTALL_DIR/ux430ua-jack-volume"
 sed -i -e '0,/'"$FIND_EXIT_0"'/s||'"'$INSTALL_DIR"'/ux430ua-jack-volume'"'"'\n&|' /etc/rc.local
 ln -s -- "$INSTALL_DIR/ux430ua-jack-volume" /lib/systemd/system-sleep/ux430ua-jack-volume
 
+# apply the changes immediately
+"$INSTALL_DIR"/ux430ua-jack-volume
+
 # final message
-echo
-echo 'Installation finished! In order to apply the changes, reboot your device.'
+echo 'Installation finished!'

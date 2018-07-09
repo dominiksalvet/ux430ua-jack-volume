@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 This section describes changes not present in any release yet.
 
+## 1.1.0 (2018-07-09)
+
+### Added
+
+* No need of restart device after the installation, changes are applied immediately.
+* The program prints only version using the `-version` option.
+
 ## 1.0.0 (2018-07-08)
 
 ### Fixed

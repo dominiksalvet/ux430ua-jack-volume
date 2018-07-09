@@ -70,5 +70,4 @@ sed -i -e '\|^[^#]*'"'$INSTALL_DIR"'/ux430ua-jack-volume'"'"'|d' /etc/rc.local
 rm -f -- "$INSTALL_DIR/ux430ua-jack-volume"
 
 # final message
-echo
 echo 'Uninstallation finished! In order to apply the changes, reboot your device.'

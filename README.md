@@ -12,7 +12,7 @@ The described problem can be solved with this program. The program includes a sm
 
 ## Installation
 
-To install the current stable release of this program **automatically**, open a terminal emulator and use the following commands:
+To install the latest stable release of this program **automatically**, open a terminal emulator and use the following commands:
 
 ```sh
 cd ~/Downloads/ &&
@@ -20,7 +20,7 @@ if [ ! -d ux430ua-jack-volume/ ]; then
     git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
 fi &&
 cd ux430ua-jack-volume/ &&
-git checkout -q 1.0.0 &&
+git checkout -q "$(git describe --tags --abbrev=0)" &&
 sudo make install
 ```
 
@@ -28,7 +28,7 @@ After the installation, the *~/Downloads/ux430ua-jack-volume/* directory won't b
 
 ---
 
-If it is required to **uninstall** the current stable release of this program **automatically**, open a terminal emulator and use the following commands:
+If it is required to **uninstall** the latest stable release of this program **automatically**, open a terminal emulator and use the following commands:
 
 ```sh
 cd ~/Downloads/ &&
@@ -36,7 +36,7 @@ if [ ! -d ux430ua-jack-volume/ ]; then
     git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
 fi &&
 cd ux430ua-jack-volume/ &&
-git checkout -q 1.0.0 &&
+git checkout -q "$(git describe --tags --abbrev=0)" &&
 sudo make uninstall
 ```
 
