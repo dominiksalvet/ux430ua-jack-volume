@@ -24,7 +24,7 @@ git checkout -q 1.0.0 &&
 sudo make install
 ```
 
-After the installation, *~/Downloads/ux430ua-jack-volume/* directory won't be required for the program to be working and so it can be removed.
+After the installation, the *~/Downloads/ux430ua-jack-volume/* directory won't be required for the program to be working and so it can be removed.
 
 ---
 
