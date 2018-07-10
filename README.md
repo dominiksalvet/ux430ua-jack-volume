@@ -1,4 +1,4 @@
-# [ASUS ZenBook UX430UA Jack Volume Setup](https://gitlab.com/dominiksalvet/ux430ua-jack-volume)
+# ASUS ZenBook UX430UA Jack Volume Setup
 
 In the default setup of the ASUS ZenBook UX430UA running Linux, output volume of 3.5 mm jack audio often has a low coefficient, so audio volume of 3.5 mm devices is scaled down significantly compared to what it should be. The problem occurs with some delay after plugging-in a 3.5 mm device. So even despite of adjusting sound volume level on the 3.5 mm device, if possible, after plugging this 3.5 mm device in, it's sound volume is very high for a while and then jumps down to the adjusted level, which may be very unpleasant.
 
@@ -20,7 +20,7 @@ if [ ! -d ux430ua-jack-volume/ ]; then
     git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
 fi &&
 cd ux430ua-jack-volume/ &&
-git checkout -q "$(git describe --tags --abbrev=0)" &&
+git checkout -q "$(git describe --abbrev=0)" &&
 sudo make install
 ```
 
@@ -36,7 +36,7 @@ if [ ! -d ux430ua-jack-volume/ ]; then
     git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
 fi &&
 cd ux430ua-jack-volume/ &&
-git checkout -q "$(git describe --tags --abbrev=0)" &&
+git checkout -q "$(git describe --abbrev=0)" &&
 sudo make uninstall
 ```
 
