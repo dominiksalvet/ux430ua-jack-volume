@@ -21,4 +21,4 @@ If you have any suggestions on development of this project, follow these steps:
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the same license that the project is licensed under and that is published in the [*LICENSE.md*](LICENSE.md) file.
+By contributing, you agree that your contributions will be licensed under the same license that is published in the [*LICENSE.md*](LICENSE.md) file.
