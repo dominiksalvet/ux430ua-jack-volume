@@ -3,7 +3,6 @@
 #-------------------------------------------------------------------------------
 # Copyright (C) 2017-2018 Dominik Salvet
 # SPDX-License-Identifier: MIT
-# <https://gitlab.com/dominiksalvet/ux430ua-jack-volume>
 #-------------------------------------------------------------------------------
 # PARAMETERS:
 #   $1 - unnormalized installation directory path

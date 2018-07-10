@@ -1,7 +1,6 @@
 #-------------------------------------------------------------------------------
 # Copyright (C) 2018 Dominik Salvet
 # SPDX-License-Identifier: MIT
-# <https://gitlab.com/dominiksalvet/ux430ua-jack-volume>
 #-------------------------------------------------------------------------------
 
 

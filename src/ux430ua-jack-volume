@@ -3,7 +3,6 @@
 #-------------------------------------------------------------------------------
 # Copyright (C) 2017-2018 Dominik Salvet
 # SPDX-License-Identifier: MIT
-# <https://gitlab.com/dominiksalvet/ux430ua-jack-volume>
 #-------------------------------------------------------------------------------
 
 
@@ -11,8 +10,9 @@
 # PROGRAM INFORMATION
 #-------------------------------------------------------------------------------
 
-PROGRAM_NAME='ux430ua-jack-volume'
-PROGRAM_VERSION='1.1.0'
+NAME='ux430ua-jack-volume'
+VERSION='1.1.0'
+WEBSITE='https://gitlab.com/dominiksalvet/ux430ua-jack-volume'
 
 #-------------------------------------------------------------------------------
 # PROCESSING PARAMETERS
@@ -25,12 +25,12 @@ OPTION:
   -about    display information and exit
   -version  display version and exit"
 
-ABOUT_MESSAGE="$PROGRAM_NAME $PROGRAM_VERSION
+ABOUT_MESSAGE="$NAME $VERSION
 Fix low 3.5 mm jack output audio volume of ASUS ZenBook UX430UA on Linux.
 
 Copyright (C) 2017-2018 Dominik Salvet
 SPDX-License-Identifier: MIT
-<https://gitlab.com/dominiksalvet/ux430ua-jack-volume>"
+<$WEBSITE>"
 
 HINT_MESSAGE="Try '$0 -help' for more information."
 
@@ -46,7 +46,7 @@ for i in "$@"; do
             exit 0
             ;;
         -version)
-            echo "$PROGRAM_VERSION"
+            echo "$VERSION"
             exit 0
             ;;
         *)
