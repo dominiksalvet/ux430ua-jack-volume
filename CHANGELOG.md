@@ -8,9 +8,12 @@ This section describes changes not present in any release yet.
 
 ## 1.1.0 (2018-07-09)
 
-### Added
+### Changed
 
 * No need of restart device after the installation, changes are applied immediately.
+
+### Added
+
 * The program prints only version using the `-version` option.
 
 ## 1.0.0 (2018-07-08)
