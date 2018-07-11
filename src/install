@@ -15,7 +15,7 @@
 #-------------------------------------------------------------------------------
 
 # list of required software
-SW_REQUIRED='echo [ id cd dirname grep cat apt chmod sed ln'
+SW_REQUIRED='echo [ id dirname grep cat apt chmod sed ln'
 
 # check if some software is missing
 for i in $SW_REQUIRED; do
@@ -36,8 +36,8 @@ NORMALIZE_PATH='s|/\+|/|g;s|\([^/]*\)/*$|\1|'
 # normalize the '$1' argument
 INSTALL_DIR=$(echo "$1" | sed -e "$NORMALIZE_PATH")
 
-# script's parent directory path
-SCRIPT_DIR="$(dirname -- "$0")"
+# script directory path, expecting the 'src/' directory
+SRC_DIR="$(dirname -- "$0")"
 
 # read the program information from metadata
 NAME="$(cat "$2/name")"
@@ -82,23 +82,17 @@ if [ -f "$INSTALL_DIR/ux430ua-jack-volume" ]; then
     exit 0
 fi
 
-# change directory to the script directory
-cd -- "$SCRIPT_DIR/" || {
-    echo "$0: '$SCRIPT_DIR/' should have been existing, installation canceled." >&2
-    exit 1
-}
-
 #-------------------------------------------------------------------------------
 # FILE DEPENDENCIES
 #-------------------------------------------------------------------------------
 
 # check if ux430ua-jack-volume file exists
-if [ ! -f ux430ua-jack-volume ]; then
-    echo "$0: '$SCRIPT_DIR/ux430ua-jack-volume' does not exist, installation canceled." >&2
+if [ ! -f "$SRC_DIR/ux430ua-jack-volume" ]; then
+    echo "$0: '$SRC_DIR/ux430ua-jack-volume' does not exist, installation canceled." >&2
     exit 1
 else
     # load ux430ua-jack-volume file content into variable
-    ux430ua_jack_volume_string=$(cat ux430ua-jack-volume)
+    ux430ua_jack_volume_string=$(cat "$SRC_DIR/ux430ua-jack-volume")
 
     # insert metadata into the program's code
     ux430ua_jack_volume_string=$(echo "$ux430ua_jack_volume_string" |
