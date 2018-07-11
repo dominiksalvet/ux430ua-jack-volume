@@ -27,4 +27,4 @@ By contributing, you agree that your contributions will be licensed under the sa
 
 ## Forking this project
 
-In case you decide to fork this project and continue with the development on your own, files in the [*meta/*](meta/) directory are all that should be modified to make the forking complete. However, there **still could exist some exceptions** that for some reason can't depend on that files. If they exist, they are listed, in the *exceptions* file placed in the [*meta/*](meta/) directory, one per line.
+In case you decide to fork this project and continue with the development on your own, files in the [*meta/*](meta/) directory are all that should be modified after the forking to completely transfer the project. However, there **still could exist some exceptions** that for some reason can't depend on that files. If they exist, they are listed, in the *exceptions* file placed in the [*meta/*](meta/) directory, one per line.
