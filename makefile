@@ -15,6 +15,7 @@ SED := sed
 COLUMN := column
 
 # directory definitions
+META_DIR := meta
 SRC_DIR := src
 INSTALL_DIR := /usr/local/bin
 
@@ -23,20 +24,20 @@ INSTALL_DIR := /usr/local/bin
 #-------------------------------------------------------------------------------
 
 # sed script for automatic target descriptions parsing
-define PARSE_TARGET_DESCRIPTIONS
+define GET_TARGET_DESCRIPTIONS
 /^[a-zA-Z0-9]\+\s*:\([a-zA-Z0-9]\|\s\)*#.*$$/!d
 s/^\([a-zA-Z0-9]\+\)[^#]*/\1/
 s/\s*#\+\s*/#/g
 s/^/  /
 endef
-export PARSE_TARGET_DESCRIPTIONS
+export GET_TARGET_DESCRIPTIONS
 
 # function that displays generated help
 define display_generated_help
 	@$(ECHO) 'Usage: make [TARGET]...'
 	@$(ECHO)
 	@$(ECHO) 'TARGET:'
-	@$(SED) -e "$$PARSE_TARGET_DESCRIPTIONS" $(1) | $(COLUMN) -t -s '#'
+	@$(SED) -e "$$GET_TARGET_DESCRIPTIONS" $(1) | $(COLUMN) -t -s '#'
 endef
 
 #-------------------------------------------------------------------------------
@@ -49,7 +50,7 @@ endef
 all: help
 
 install: # install the program
-	./$(SRC_DIR)/install '$(INSTALL_DIR)'
+	./$(SRC_DIR)/install '$(INSTALL_DIR)' '$(META_DIR)'
 
 uninstall: # uninstall the program
 	./$(SRC_DIR)/uninstall '$(INSTALL_DIR)'

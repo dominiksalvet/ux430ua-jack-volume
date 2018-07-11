@@ -6,6 +6,7 @@
 #-------------------------------------------------------------------------------
 # PARAMETERS:
 #   $1 - unnormalized installation directory path
+#   $2 - the program metadata directory path
 #-------------------------------------------------------------------------------
 
 
@@ -37,6 +38,16 @@ INSTALL_DIR=$(echo "$1" | sed -e "$NORMALIZE_PATH")
 
 # script's parent directory path
 SCRIPT_DIR="$(dirname -- "$0")"
+
+# read the program information from metadata
+NAME="$(cat "$2/name")"
+VERSION="$(cat "$2/version")"
+HOME_URL="$(cat "$2/home-url")"
+
+# scripts to insert metadata into the program's code
+NAME_APPLY='s|^\(NAME=\)NAME|\1'"'$NAME'"'|'
+VERSION_APPLY='s|^\(VERSION=\)VERSION|\1'"'$VERSION'"'|'
+HOME_URL_APPLY='s|^\(HOME_URL=\)HOME_URL|\1'"'$HOME_URL'"'|'
 
 # regular expression of line containing a successful exit of a shell script
 FIND_EXIT_0='^\s*exit\(\|\s\+0\+\)\(\s*\|\s\+#.*\)$'
@@ -88,6 +99,10 @@ if [ ! -f ux430ua-jack-volume ]; then
 else
     # load ux430ua-jack-volume file content into variable
     ux430ua_jack_volume_string=$(cat ux430ua-jack-volume)
+
+    # insert metadata into the program's code
+    ux430ua_jack_volume_string=$(echo "$ux430ua_jack_volume_string" |
+    sed -e "$NAME_APPLY" -e "$VERSION_APPLY" -e "$HOME_URL_APPLY")
 fi
 
 # create '/etc/rc.local' if it does not exist
