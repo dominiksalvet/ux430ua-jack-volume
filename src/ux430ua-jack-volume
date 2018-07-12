@@ -10,8 +10,9 @@
 # PROGRAM INFORMATION
 #-------------------------------------------------------------------------------
 
-VERSION=VERSION
-HOME_URL=HOME_URL
+# values of the following variables are automatically generated during the building process
+VERSION=
+HOME_URL=
 
 #-------------------------------------------------------------------------------
 # PROCESSING PARAMETERS
@@ -29,7 +30,7 @@ Fix low 3.5 mm jack output audio volume of ASUS ZenBook UX430UA on Linux.
 
 Copyright (C) 2017-2018 Dominik Salvet
 SPDX-License-Identifier: MIT
-<$HOME_URL>"
+$HOME_URL"
 
 HINT_MESSAGE="Try '$0 -help' for more information."
 

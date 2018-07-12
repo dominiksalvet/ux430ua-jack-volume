@@ -44,8 +44,8 @@ VERSION="$(cat "$2/version")"
 HOME_URL="$(cat "$2/home-url")"
 
 # scripts to insert metadata into the program's code
-VERSION_APPLY='s|^\(VERSION=\)VERSION|\1'"'$VERSION'"'|'
-HOME_URL_APPLY='s|^\(HOME_URL=\)HOME_URL|\1'"'$HOME_URL'"'|'
+VERSION_APPLY='s|^VERSION=$|&'"'$VERSION'"'|'
+HOME_URL_APPLY='s|^HOME_URL=$|&'"'$HOME_URL'"'|'
 
 # regular expression of line containing a successful exit of a shell script
 FIND_EXIT_0='^\s*exit\(\|\s\+0\+\)\(\s*\|\s\+#.*\)$'
