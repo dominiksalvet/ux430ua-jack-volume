@@ -10,7 +10,6 @@
 # PROGRAM INFORMATION
 #-------------------------------------------------------------------------------
 
-NAME=NAME
 VERSION=VERSION
 HOME_URL=HOME_URL
 
@@ -25,7 +24,7 @@ OPTION:
   -about    display information and exit
   -version  display version and exit"
 
-ABOUT_MESSAGE="$NAME $VERSION
+ABOUT_MESSAGE="ux430ua-jack-volume $VERSION
 Fix low 3.5 mm jack output audio volume of ASUS ZenBook UX430UA on Linux.
 
 Copyright (C) 2017-2018 Dominik Salvet
