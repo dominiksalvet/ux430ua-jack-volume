@@ -50,10 +50,10 @@ endef
 all: help
 
 install: # install the program
-	./$(SRC_DIR)/install '$(INSTALL_DIR)'
+	./install '$(INSTALL_DIR)'
 
 uninstall: # uninstall the program
-	./$(SRC_DIR)/uninstall '$(INSTALL_DIR)'
+	./uninstall '$(INSTALL_DIR)'
 
 help: # display this help
 	$(call display_generated_help,makefile)
