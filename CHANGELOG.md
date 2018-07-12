@@ -6,10 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 This section describes changes not present in any release yet.
 
-### Changed
-
-* The program script is built during the installation time rather than just copy that file.
-
 ## 1.1.0 (2018-07-10)
 
 ### Changed

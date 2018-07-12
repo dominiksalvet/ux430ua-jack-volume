@@ -3,10 +3,10 @@
 #-------------------------------------------------------------------------------
 # Copyright (C) 2017-2018 Dominik Salvet
 # SPDX-License-Identifier: MIT
+# https://gitlab.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 # PARAMETERS:
 #   $1 - unnormalized installation directory path
-#   $2 - the program metadata directory path
 #-------------------------------------------------------------------------------
 
 
@@ -38,14 +38,6 @@ INSTALL_DIR=$(echo "$1" | sed -e "$NORMALIZE_PATH")
 
 # script directory path, expecting the 'src/' directory
 SRC_DIR="$(dirname -- "$0")"
-
-# read the program information from metadata
-VERSION="$(cat "$2/version")"
-HOME_URL="$(cat "$2/home-url")"
-
-# scripts to insert metadata into the program's code
-VERSION_APPLY='s|^VERSION=$|&'"'$VERSION'"'|'
-HOME_URL_APPLY='s|^HOME_URL=$|&'"'$HOME_URL'"'|'
 
 # regular expression of line containing a successful exit of a shell script
 FIND_EXIT_0='^\s*exit\(\|\s\+0\+\)\(\s*\|\s\+#.*\)$'
@@ -91,10 +83,6 @@ if [ ! -f "$SRC_DIR/ux430ua-jack-volume" ]; then
 else
     # load ux430ua-jack-volume file content into variable
     ux430ua_jack_volume_string=$(cat "$SRC_DIR/ux430ua-jack-volume")
-
-    # insert metadata into the program's code
-    ux430ua_jack_volume_string=$(echo "$ux430ua_jack_volume_string" |
-    sed -e "$VERSION_APPLY" -e "$HOME_URL_APPLY")
 fi
 
 # create '/etc/rc.local' if it does not exist

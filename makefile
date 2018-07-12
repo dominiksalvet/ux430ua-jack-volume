@@ -1,6 +1,7 @@
 #-------------------------------------------------------------------------------
 # Copyright (C) 2018 Dominik Salvet
 # SPDX-License-Identifier: MIT
+# https://gitlab.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 
 
@@ -15,7 +16,6 @@ SED := sed
 COLUMN := column
 
 # directory definitions
-META_DIR := meta
 SRC_DIR := src
 INSTALL_DIR := /usr/local/bin
 
@@ -50,7 +50,7 @@ endef
 all: help
 
 install: # install the program
-	./$(SRC_DIR)/install '$(INSTALL_DIR)' '$(META_DIR)'
+	./$(SRC_DIR)/install '$(INSTALL_DIR)'
 
 uninstall: # uninstall the program
 	./$(SRC_DIR)/uninstall '$(INSTALL_DIR)'

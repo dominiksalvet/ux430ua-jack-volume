@@ -1,6 +1,6 @@
 # Contribution Guide
 
-The development of this project is published on the URL stated in the [*meta/dev-url*](meta/dev-url) file and **everyone is welcome to contribute** there. Here is described how.
+The development of this project is published on this [GitLab page](https://gitlab.com/dominiksalvet/ux430ua-jack-volume) and **everyone is welcome to contribute** there. Here is described how.
 
 ## Suggestions
 
@@ -22,9 +22,3 @@ If you have any suggestions on development of this project, follow these steps:
 ## License
 
 By contributing, you agree that your contributions will be licensed under the same license that is published in the [*LICENSE.md*](LICENSE.md) file.
-
----
-
-## Forking this project
-
-In case you decide to fork this project and continue with the development on your own, files in the [*meta*](meta) directory should be all that is about to modify after forking the project to **completely transfer it** with all associated references. However, there **still could exist some exceptions** that for some reason can't fully depend on that files and will required additional manual review afterwards. If they exist, they are listed as file names in the *exceptions* file placed in the [*meta*](meta) directory, one per line.
