@@ -23,7 +23,7 @@ INSTALL_DIR := /usr/local/bin
 # HELP GENERATOR
 #-------------------------------------------------------------------------------
 
-# sed script for automatic target descriptions parsing
+# sed script for automatic target descriptions parsing from a makefile
 define GET_TARGET_DESCRIPTIONS
 /^[a-zA-Z0-9]\+\s*:\([a-zA-Z0-9]\|\s\)*#.*$$/!d
 s/^\([a-zA-Z0-9]\+\)[^#]*/\1/
@@ -32,7 +32,7 @@ s/^/  /
 endef
 export GET_TARGET_DESCRIPTIONS
 
-# function that displays generated help
+# function that displays generated help of given makefile
 define display_generated_help
 	@$(ECHO) 'Usage: make [TARGET]...'
 	@$(ECHO)
