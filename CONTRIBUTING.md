@@ -4,10 +4,10 @@ The development of this project is published on [this website](https://gitlab.co
 
 ## Suggestions
 
-If you have any suggestions on development of this project, follow these steps:
+If you have any suggestions on development of the project, follow these steps:
 
 1. Take a look at [issues](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/issues) of the project and **make sure that the same suggestion wasn't already reported**.
-2. If not, [open a new issue](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/issues/new). In the issue, **try to provide as much relevant information as possible**.
+2. If not, open a [new issue](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/issues/new). In the issue, **try to provide as much relevant information as possible**.
 
 ## Merge requests
 
@@ -17,7 +17,7 @@ If you have any suggestions on development of this project, follow these steps:
 2. Create a new branch with descriptive name according to your changes.
 3. Note your changes to the [Unreleased](CHANGELOG.md#unreleased) section in the [*CHANGELOG.md*](CHANGELOG.md) file.
 4. Commit and push your changes to the branch.
-5. Submit a new merge request with **clear description of the problem and solution**. Also include the relevant issue number if applicable.
+5. Submit a [new merge request](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/merge_requests/new) with **clear description of the problem and solution**. Also include the relevant issue number if applicable.
 
 ## License
 
