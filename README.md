@@ -24,7 +24,7 @@ git checkout -q "$(git describe --abbrev=0)" &&
 sudo make install
 ```
 
-After the installation, the *~/Downloads/ux430ua-jack-volume/* directory won't be required for the program to be working and so it can be removed.
+After the installation, the *~/Downloads/ux430ua-jack-volume* directory won't be required for the program to be working and so it can be removed.
 
 ---
 
@@ -42,10 +42,10 @@ sudo make uninstall
 
 ### Choose the installation directory
 
-The default installation directory is */usr/local/bin/*. To change it, pass your desired installation directory path in `INSTALL_DIR` variable to the `sudo make install` command. An example follows:
+The default installation directory is */usr/local/bin*. To change it, pass your desired installation directory path in `INSTALL_DIR` variable to the `sudo make install` command. An example follows:
 
 ```sh
-sudo make install INSTALL_DIR=/opt/
+sudo make install INSTALL_DIR=/opt
 ```
 
 In case of uninstalling from a custom installation directory, do not forget to use this variable as well.
