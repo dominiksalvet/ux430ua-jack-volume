@@ -1,10 +1,10 @@
 # Changelog
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). Individual releases can be obtained using [the tags](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/tags).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). Individual releases can be obtained using the [tags](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/tags).
 
 ## Unreleased
 
-This section describes changes not present in any release yet.
+The changes not yet present in any release are listed in this section.
 
 ## 1.1.0 (2018-07-10)
 
