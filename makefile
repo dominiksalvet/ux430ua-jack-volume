@@ -26,8 +26,8 @@ INSTALL_DIR := /usr/local/bin
 
 # sed script for automatic target descriptions parsing from a makefile
 define GET_TARGET_DESCRIPTIONS
-/^[a-zA-Z0-9]\+\s*:\([a-zA-Z0-9]\|\s\)*#.*$$/!d
-s/^\([a-zA-Z0-9]\+\)[^#]*/\1/
+/^[a-zA-Z0-9_-]\+\s*:\([a-zA-Z0-9_-]\|\s\)*#.*$$/!d
+s/^\([a-zA-Z0-9_-]\+\)[^#]*/\1/
 s/\s*#\+\s*/#/g
 s/^/  /
 endef
