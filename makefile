@@ -45,7 +45,7 @@ endef
 # TARGETS
 #-------------------------------------------------------------------------------
 
-.PHONY: all install-deps install uninstall help
+.PHONY: all install-deps install uninstall help about
 
 # there is no building required, so the default target references to the help target
 all: help
@@ -61,3 +61,10 @@ uninstall: # uninstall the program
 
 help: # default, display this help
 	$(call display_generated_help,makefile)
+
+about: # display information about this makefile
+	@$(ECHO) "Installation manager for 'ux430ua-jack-volume' program."
+	@$(ECHO)
+	@$(ECHO) 'Copyright (C) 2018 Dominik Salvet'
+	@$(ECHO) 'SPDX-License-Identifier: MIT'
+	@$(ECHO) 'https://gitlab.com/dominiksalvet/ux430ua-jack-volume'
