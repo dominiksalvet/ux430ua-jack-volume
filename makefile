@@ -24,21 +24,21 @@ INSTALL_DIR := /usr/local/bin
 # HELP GENERATOR
 #-------------------------------------------------------------------------------
 
-# sed script for automatic target descriptions parsing from a makefile
+# sed script to get automatically target descriptions from a makefile
 define GET_TARGET_DESCRIPTIONS
-/^[a-zA-Z0-9_-]\+\s*:\([a-zA-Z0-9_-]\|\s\)*#.*$$/!d
-s/^\([a-zA-Z0-9_-]\+\)[^#]*/\1/
-s/\s*#\+\s*/#/g
+/^[^:=#[:blank:]]\{1,\}[[:blank:]]*:[^:=#]*#/!d
+s/^\([^:=#[:blank:]]\{1,\}\)[^#]*/\1/
+s/[[:blank:]]*#\{1,\}[[:blank:]]*/#/g
 s/^/  /
 endef
 export GET_TARGET_DESCRIPTIONS
 
-# function that displays generated help of given makefile
+# displays generated help of a given makefile from it's comments
 define display_generated_help
 	@$(ECHO) 'Usage: make [TARGET]...'
 	@$(ECHO)
 	@$(ECHO) 'TARGET:'
-	@$(SED) -e "$$GET_TARGET_DESCRIPTIONS" $(1) | $(COLUMN) -t -s '#'
+	@$(SED) --posix -e "$$GET_TARGET_DESCRIPTIONS" $(1) | $(COLUMN) -t -s '#'
 endef
 
 #-------------------------------------------------------------------------------
@@ -47,10 +47,10 @@ endef
 
 .PHONY: all install-deps install uninstall help
 
-# the default target
+# there is no building required, so the default target references to the help target
 all: help
 
-install-deps: # install the software dependencies
+install-deps: # install dependencies of the program
 	./$(MAKE_DIR)/install-deps
 
 install: # install the program
