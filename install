@@ -7,6 +7,7 @@
 #-------------------------------------------------------------------------------
 # PARAMETERS:
 #   $1 - unnormalized installation directory path
+#   $2 - source files directory path
 #-------------------------------------------------------------------------------
 
 
@@ -15,7 +16,7 @@
 #-------------------------------------------------------------------------------
 
 # list of required software
-SW_REQUIRED='echo [ id dirname grep cat apt chmod sed ln'
+SW_REQUIRED='echo [ id grep cat apt chmod sed ln'
 
 # check if some software is missing
 for i in $SW_REQUIRED; do
@@ -35,9 +36,6 @@ NORMALIZE_PATH='s|/\+|/|g;s|\([^/]*\)/*$|\1|'
 
 # normalize the '$1' argument
 INSTALL_DIR=$(echo "$1" | sed -e "$NORMALIZE_PATH")
-
-# script directory path, expecting the 'src/' directory
-SRC_DIR="$(dirname -- "$0")"
 
 # regular expression of line containing a successful exit of a shell script
 FIND_EXIT_0='^\s*exit\(\|\s\+0\+\)\(\s*\|\s\+#.*\)$'
@@ -77,12 +75,12 @@ fi
 #-------------------------------------------------------------------------------
 
 # check if ux430ua-jack-volume file exists
-if [ ! -f "$SRC_DIR/ux430ua-jack-volume" ]; then
-    echo "$0: '$SRC_DIR/ux430ua-jack-volume' does not exist, installation canceled." >&2
+if [ ! -f "$2/ux430ua-jack-volume" ]; then
+    echo "$0: '$2/ux430ua-jack-volume' does not exist, installation canceled." >&2
     exit 1
 else
     # load ux430ua-jack-volume file content into variable
-    ux430ua_jack_volume_string=$(cat "$SRC_DIR/ux430ua-jack-volume")
+    ux430ua_jack_volume_string=$(cat "$2/ux430ua-jack-volume")
 fi
 
 # create '/etc/rc.local' if it does not exist

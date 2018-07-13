@@ -50,7 +50,7 @@ endef
 all: help
 
 install: # install the program
-	./install '$(INSTALL_DIR)'
+	./install '$(INSTALL_DIR)' '$(SRC_DIR)'
 
 uninstall: # uninstall the program
 	./uninstall '$(INSTALL_DIR)'
