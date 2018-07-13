@@ -16,7 +16,7 @@
 #-------------------------------------------------------------------------------
 
 # list of required software
-SW_REQUIRED='echo [ id grep cat apt chmod sed ln'
+SW_REQUIRED='echo [ id grep cat chmod sed ln'
 
 # check if some software is missing
 for i in $SW_REQUIRED; do
@@ -99,9 +99,6 @@ chmod a+x /etc/rc.local
 #-------------------------------------------------------------------------------
 # INSTALLATION
 #-------------------------------------------------------------------------------
-
-# install required package to control the sound volume
-apt install alsa-tools -y || exit 1
 
 # apply 3.5 mm jack output volume setup
 echo "$ux430ua_jack_volume_string" > "$INSTALL_DIR/ux430ua-jack-volume"

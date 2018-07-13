@@ -45,10 +45,13 @@ endef
 # TARGETS
 #-------------------------------------------------------------------------------
 
-.PHONY: all install uninstall help
+.PHONY: all install-deps install uninstall help
 
 # the default target
 all: help
+
+install-deps: # install the software dependencies
+	./$(MAKE_DIR)/install-deps
 
 install: # install the program
 	./$(MAKE_DIR)/install '$(INSTALL_DIR)' '$(BUILD_DIR)'

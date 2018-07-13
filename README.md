@@ -21,6 +21,7 @@ if [ ! -d ux430ua-jack-volume/ ]; then
 fi &&
 cd ux430ua-jack-volume/ &&
 git checkout -q "$(git describe --abbrev=0)" &&
+sudo make install-deps &&
 sudo make install
 ```
 

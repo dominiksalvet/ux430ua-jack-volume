@@ -1,0 +1,40 @@
+#!/bin/sh
+
+#-------------------------------------------------------------------------------
+# Copyright (C) 2018 Dominik Salvet
+# SPDX-License-Identifier: MIT
+# https://gitlab.com/dominiksalvet/ux430ua-jack-volume
+#-------------------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------------------
+# SOFTWARE DEPENDENCIES
+#-------------------------------------------------------------------------------
+
+# list of required software
+SW_REQUIRED='echo apt'
+
+# check if some software is missing
+for i in $SW_REQUIRED; do
+    # software is missing if at least one piece of software is missing
+    if ! command -v "$i" > /dev/null; then
+        echo "$0: Required software '$i' is missing, installation canceled." >&2
+        exit 1
+    fi
+done
+
+#-------------------------------------------------------------------------------
+# INSTALLATION
+#-------------------------------------------------------------------------------
+
+# check if running as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "$0: Please run as root, installation canceled." >&2
+    exit 1
+fi
+
+# install required package to control the sound volume
+apt install alsa-tools -y || exit 1
+
+# final message
+echo 'Installation finished!'
