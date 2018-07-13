@@ -16,7 +16,8 @@ SED := sed
 COLUMN := column
 
 # directory definitions
-SRC_DIR := src
+MAKE_DIR := make
+BUILD_DIR := build
 INSTALL_DIR := /usr/local/bin
 
 #-------------------------------------------------------------------------------
@@ -50,10 +51,10 @@ endef
 all: help
 
 install: # install the program
-	./install '$(INSTALL_DIR)' '$(SRC_DIR)'
+	./$(MAKE_DIR)/install '$(INSTALL_DIR)' '$(BUILD_DIR)'
 
 uninstall: # uninstall the program
-	./uninstall '$(INSTALL_DIR)'
+	./$(MAKE_DIR)/uninstall '$(INSTALL_DIR)'
 
-help: # display this help
+help: # default, display this help
 	$(call display_generated_help,makefile)
