@@ -24,11 +24,11 @@ INSTALL_DIR := /usr/local/bin
 # HELP GENERATOR
 #-------------------------------------------------------------------------------
 
-# sed script to get automatically target descriptions from a makefile
+# sed script - get automatically target descriptions from a makefile
 define GET_TARGET_DESCRIPTIONS
-/^[^:=#[:blank:]]\{1,\}[[:blank:]]*:[^:=#]*#/!d
-s/^\([^:=#[:blank:]]\{1,\}\)[^#]*/\1/
-s/[[:blank:]]*#\{1,\}[[:blank:]]*/#/g
+/^[^:=#[:blank:]]+[[:blank:]]*:[^:=#]*#/!d
+s/[:=#[:blank:]][^#]*//
+s/[[:blank:]#]*#[[:blank:]#]*/#/g
 s/^/  /
 endef
 export GET_TARGET_DESCRIPTIONS
@@ -38,7 +38,7 @@ define display_generated_help
 	@$(ECHO) 'Usage: make [TARGET]...'
 	@$(ECHO)
 	@$(ECHO) 'TARGET:'
-	@$(SED) --posix -e "$$GET_TARGET_DESCRIPTIONS" $(1) | $(COLUMN) -t -s '#'
+	@$(SED) -E -e "$$GET_TARGET_DESCRIPTIONS" $(1) | $(COLUMN) -t -s '#'
 endef
 
 #-------------------------------------------------------------------------------
