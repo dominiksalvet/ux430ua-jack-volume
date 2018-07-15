@@ -9,6 +9,7 @@ The changes not yet present in any release are listed in this section.
 ### Changed
 
 * Installation has been split into dependency installation and the program installation.
+* All restrictions of the installation directory path format have been removed. So now it can also contain '|'.
 
 ## 1.1.0 (2018-07-10)
 
