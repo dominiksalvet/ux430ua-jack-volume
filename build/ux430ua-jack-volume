@@ -8,10 +8,10 @@
 
 
 #-------------------------------------------------------------------------------
-# PROCESSING PARAMETERS
+# DEFINITIONS
 #-------------------------------------------------------------------------------
 
-# the program current version
+# the current version of the program
 VERSION='1.1.0'
 
 HELP_MESSAGE="Usage: $0 [OPTION]...
@@ -30,7 +30,11 @@ https://gitlab.com/dominiksalvet/ux430ua-jack-volume"
 
 HINT_MESSAGE="Try '$0 -help' for more information."
 
-# processing each parameter
+#-------------------------------------------------------------------------------
+# PROCESSING PARAMETERS
+#-------------------------------------------------------------------------------
+
+# processing each parameter separately
 for i in "$@"; do
     case "$i" in
         -help)
@@ -54,7 +58,7 @@ for i in "$@"; do
 done
 
 #-------------------------------------------------------------------------------
-# EXECUTION
+# APPLY CONFIGURATION
 #-------------------------------------------------------------------------------
 
 # check if running as root
