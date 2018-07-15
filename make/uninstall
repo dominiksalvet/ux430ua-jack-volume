@@ -46,6 +46,12 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# check if given installation directory path is absolute
+if ! echo "$INSTALL_DIR/" | grep -q -E -e '^/'; then
+    echo "$0: '$INSTALL_DIR/' isn't an absolute path, installation canceled." >&2
+    exit 1
+fi
+
 # check if installed
 if [ ! -f "$INSTALL_DIR/ux430ua-jack-volume" ]; then
     echo "The program is not installed in '$INSTALL_DIR/', uninstallation canceled."

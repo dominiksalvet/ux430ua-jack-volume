@@ -52,7 +52,13 @@ fi
 
 # check if arguments passed
 if [ -z "$1" ] || [ -z "$2" ]; then
-    echo "$0: Please supply correct arguments, installation canceled." >&2
+    echo "$0: Please supply non-empty arguments, installation canceled." >&2
+    exit 1
+fi
+
+# check if given installation directory path is absolute
+if ! echo "$INSTALL_DIR/" | grep -q -E -e '^/'; then
+    echo "$0: '$INSTALL_DIR/' isn't an absolute path, installation canceled." >&2
     exit 1
 fi
 

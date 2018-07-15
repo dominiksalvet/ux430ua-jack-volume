@@ -43,7 +43,7 @@ sudo make uninstall
 
 ### Choose the installation directory
 
-The default installation directory is */usr/local/bin*. To change it, pass your desired installation directory path in `INSTALL_DIR` variable to the `sudo make install` command. An example follows:
+The default installation directory is */usr/local/bin*. To change it, pass your desired installation directory path as an absolute path in `INSTALL_DIR` variable to the `sudo make install` command. An example follows:
 
 ```sh
 sudo make install INSTALL_DIR=/opt
