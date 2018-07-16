@@ -9,11 +9,13 @@ The changes not yet present in any release are listed in this section.
 ### Fixed
 
 * If passed a custom installation directory path, it must be absolute.
+* Previous installation of the program can be detected during installation even if the program is installed in a different directory than the one defined by `INSTALL_DIR`.
 
 ### Changed
 
 * Installation has been split into dependency installation and the program installation.
 * All restrictions of the installation directory path format have been removed. So now it can also contain '|'.
+* Check if running as root is done at the last minute, so more information is accessible without root permissions.
 
 ## 1.1.0 (2018-07-10)
 
