@@ -100,9 +100,11 @@ if [ ! -f /etc/rc.local ]; then
     echo '#!/bin/sh -e
 
 exit 0' > /etc/rc.local
+    echo "'/etc/rc.local' has been created."
 # append a successful exit if it does not contain one
 elif ! grep -q -E -e "$CONTAINS_EXIT_0" /etc/rc.local; then
     echo 'exit 0' >> /etc/rc.local
+    echo "'/etc/rc.local' has been modified to contain a successful exit."
 fi
 
 # set the execution permission of '/etc/rc.local'
