@@ -6,9 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 The changes not yet present in any release are listed in this section.
 
+## 1.2.1 (2018-07-16)
+
 ### Fixed
 
 * There is no more error message when '/etc/rc.local' doesn't exist before the installation.
+* The `post` parameter from the systemd after waking up from sleep no longer prevents the program from it's execution.
 
 ## 1.2.0 (2018-07-16)
 

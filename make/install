@@ -111,13 +111,20 @@ fi
 chmod a+x /etc/rc.local
 
 # apply 3.5 mm jack output volume setup
-echo "$ux430ua_jack_volume_string" > "$INSTALL_DIR/ux430ua-jack-volume"
-chmod a+x "$INSTALL_DIR/ux430ua-jack-volume"
-ln -s "$INSTALL_DIR/ux430ua-jack-volume" /lib/systemd/system-sleep/ux430ua-jack-volume
-sed -i -E -e '/'"$CONTAINS_EXIT_0"'/{s//'"'$INSTALL_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'\n&/; :add_line; N; badd_line}' /etc/rc.local
+echo "$ux430ua_jack_volume_string" > "$INSTALL_DIR/ux430ua-jack-volume" &&
+chmod a+x "$INSTALL_DIR/ux430ua-jack-volume" &&
+# create ux430ua-jack-volume caller
+echo "#!/bin/sh
 
-# apply the changes immediately
+$INSTALL_DIR/ux430ua-jack-volume" > /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
+chmod a+x /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
+sed -i -E -e '/'"$CONTAINS_EXIT_0"'/{s//'"'$INSTALL_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'\n&/; :add_line; N; badd_line}' /etc/rc.local || {
+    echo "$0: Final steps of the installation have failed, try install again." >&2
+    exit 1
+}
+
+# apply the changes immediately (it may not be successful as the program dependencies may be missing)
 "$INSTALL_DIR"/ux430ua-jack-volume
 
 # final message
-echo 'Installation finished!'
+echo 'Installation finished successfully!'

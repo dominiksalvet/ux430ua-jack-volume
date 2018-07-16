@@ -29,7 +29,7 @@ done
 
 # check if installed
 if ! INSTALLED_PATH="$(grep -m 1 -E -e 'ux430ua-jack-volume' /etc/rc.local)"; then
-    echo "The program is not installed on this system, uninstallation canceled."
+    echo "The uninstaller can't detect the program on this system, uninstallation canceled."
     exit 0
 fi
 
@@ -52,8 +52,8 @@ fi
 
 # revert 3.5 mm jack output volume setup
 sed -i -E -e '/^[^#]*'"'$INSTALLED_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'/d' /etc/rc.local
-rm -f /lib/systemd/system-sleep/ux430ua-jack-volume
-rm -f "$INSTALLED_DIR/ux430ua-jack-volume"
+rm /lib/systemd/system-sleep/ux430ua-jack-volume-caller
+rm "$INSTALLED_DIR/ux430ua-jack-volume"
 
 # final message
-echo 'Uninstallation finished! In order to apply the changes, reboot your device.'
+echo 'Uninstallation finished successfully! In order to apply the changes, reboot your device.'
