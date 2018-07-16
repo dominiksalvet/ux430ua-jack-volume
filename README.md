@@ -49,7 +49,7 @@ The default installation directory is */usr/local/bin*. To change it, pass your 
 sudo make install INSTALL_DIR=/opt
 ```
 
-In case of uninstalling from a custom installation directory, do not forget to use this variable as well.
+In case of uninstalling from a custom installation directory, this variable is not required; the uninstaller automatically detects where the installation directory is.
 
 ## License
 

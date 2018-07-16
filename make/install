@@ -6,8 +6,8 @@
 # https://gitlab.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 # PARAMETERS:
-#   $1 - installation directory path
-#   $2 - build directory path
+#   $1 - build directory path
+#   $2 - installation directory path
 #-------------------------------------------------------------------------------
 
 
@@ -31,8 +31,8 @@ done
 # DEFINITIONS
 #-------------------------------------------------------------------------------
 
-# normalize the installation directory path represented by '$1' parameter
-INSTALL_DIR="$(echo "$1" | sed -E -e 's|/+|/|g; s|/$||')"
+# normalize the installation directory path represented by '$2' parameter
+INSTALL_DIR="$(echo "$2" | sed -E -e 's|/+|/|g; s|/$||')"
 
 # escape delimiters of the installation directory path for later use in a sed script
 INSTALL_DIR_ESCAPED="$(echo "$INSTALL_DIR" | sed -E -e 's|/|\\/|g')"
@@ -52,7 +52,7 @@ fi
 
 # check if already installed
 if INSTALLED_PATH="$(grep -m 1 -E -e 'ux430ua-jack-volume' /etc/rc.local)"; then
-    # get installation directory from the installation path
+    # get the installation directory from the installation path
     INSTALLED_DIR="$(echo "$INSTALLED_PATH" | sed -E -e "s/^'//; s/'$//; s|/[^/]*$||")"
 
     if [ "$INSTALL_DIR" = "$INSTALLED_DIR" ]; then
@@ -77,12 +77,12 @@ if [ ! -d "$INSTALL_DIR/" ]; then
 fi
 
 # check if ux430ua-jack-volume file exists
-if [ ! -f "$2/ux430ua-jack-volume" ]; then
-    echo "$0: '$2/ux430ua-jack-volume' does not exist, installation canceled." >&2
+if [ ! -f "$1/ux430ua-jack-volume" ]; then
+    echo "$0: '$1/ux430ua-jack-volume' does not exist, installation canceled." >&2
     exit 1
 else
     # load ux430ua-jack-volume file content into variable to prevent deletion of this file during the following steps
-    ux430ua_jack_volume_string=$(cat "$2/ux430ua-jack-volume")
+    ux430ua_jack_volume_string=$(cat "$1/ux430ua-jack-volume")
 fi
 
 #-------------------------------------------------------------------------------

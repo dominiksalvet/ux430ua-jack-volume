@@ -16,6 +16,7 @@ The changes not yet present in any release are listed in this section.
 * Installation has been split into dependency installation and the program installation.
 * All restrictions of the installation directory path format have been removed. So now it can also contain '|'.
 * Check if running as root is done at the last minute, so more information is accessible without root permissions.
+* The uninstallation detects the installation directory from the */etc/rc.local* file, so no more `INSTALL_DIR` parameter is required even with a custom installation directory.
 
 ## 1.1.0 (2018-07-10)
 

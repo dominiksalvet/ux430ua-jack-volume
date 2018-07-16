@@ -54,10 +54,10 @@ install-deps: # install dependencies of the program
 	./$(MAKE_DIR)/install-deps
 
 install: # install the program
-	./$(MAKE_DIR)/install '$(INSTALL_DIR)' '$(BUILD_DIR)'
+	./$(MAKE_DIR)/install '$(BUILD_DIR)' '$(INSTALL_DIR)'
 
 uninstall: # uninstall the program
-	./$(MAKE_DIR)/uninstall '$(INSTALL_DIR)'
+	./$(MAKE_DIR)/uninstall
 
 help: # default, display this help
 	$(call display_generated_help,makefile)

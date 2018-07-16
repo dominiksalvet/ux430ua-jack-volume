@@ -5,9 +5,6 @@
 # SPDX-License-Identifier: MIT
 # https://gitlab.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
-# PARAMETERS:
-#   $1 - installation directory path
-#-------------------------------------------------------------------------------
 
 
 #-------------------------------------------------------------------------------
@@ -15,7 +12,7 @@
 #-------------------------------------------------------------------------------
 
 # list of required software
-SW_REQUIRED='echo [ rm sed'
+SW_REQUIRED='echo [ rm sed grep'
 
 # check if some software is missing
 for i in $SW_REQUIRED; do
@@ -27,30 +24,21 @@ for i in $SW_REQUIRED; do
 done
 
 #-------------------------------------------------------------------------------
-# DEFINITIONS
-#-------------------------------------------------------------------------------
-
-# normalize the installation directory path represented by '$1' parameter
-INSTALL_DIR="$(echo "$1" | sed -E -e 's|/+|/|g; s|/$||')"
-
-# escape delimiters of the installation directory path for later use in a sed script
-INSTALL_DIR_ESCAPED="$(echo "$INSTALL_DIR" | sed -E -e 's|/|\\/|g')"
-
-#-------------------------------------------------------------------------------
 # CHECK STATE
 #-------------------------------------------------------------------------------
 
-# check if given installation directory path is absolute
-if ! echo "$INSTALL_DIR/" | grep -q -E -e '^/'; then
-    echo "$0: '$INSTALL_DIR/' isn't an absolute path, installation canceled." >&2
-    exit 1
-fi
-
 # check if installed
-if [ ! -f "$INSTALL_DIR/ux430ua-jack-volume" ]; then
-    echo "The program is not installed in '$INSTALL_DIR/', uninstallation canceled."
+if ! INSTALLED_PATH="$(grep -m 1 -E -e 'ux430ua-jack-volume' /etc/rc.local)"; then
+    echo "The program is not installed on this system, uninstallation canceled."
     exit 0
 fi
+
+# get the installation directory from the installation path
+INSTALLED_DIR="$(echo "$INSTALLED_PATH" | sed -E -e "s/^'//; s/'$//; s|/[^/]*$||")"
+echo "The detected installation directory path is '$INSTALLED_DIR/'."
+
+# escape delimiters of the installation directory path for later use in a sed script
+INSTALLED_DIR_ESCAPED="$(echo "$INSTALLED_DIR" | sed -E -e 's|/|\\/|g')"
 
 #-------------------------------------------------------------------------------
 # UNINSTALLATION
@@ -64,8 +52,8 @@ fi
 
 # revert 3.5 mm jack output volume setup
 rm -f /lib/systemd/system-sleep/ux430ua-jack-volume
-sed -i -E -e '/^[^#]*'"'$INSTALL_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'/d' /etc/rc.local
-rm -f "$INSTALL_DIR/ux430ua-jack-volume"
+sed -i -E -e '/^[^#]*'"'$INSTALLED_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'/d' /etc/rc.local
+rm -f "$INSTALLED_DIR/ux430ua-jack-volume"
 
 # final message
 echo 'Uninstallation finished! In order to apply the changes, reboot your device.'
