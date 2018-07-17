@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Copyright (C) 2018 Dominik Salvet
+# Copyright 2018 Dominik Salvet
 # SPDX-License-Identifier: MIT
 # https://gitlab.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
@@ -65,6 +65,6 @@ help: # default, display this help
 about: # display information about this makefile
 	@$(ECHO) "Installation manager for 'ux430ua-jack-volume' program."
 	@$(ECHO)
-	@$(ECHO) 'Copyright (C) 2018 Dominik Salvet'
+	@$(ECHO) 'Copyright 2018 Dominik Salvet'
 	@$(ECHO) 'SPDX-License-Identifier: MIT'
 	@$(ECHO) 'https://gitlab.com/dominiksalvet/ux430ua-jack-volume'

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #-------------------------------------------------------------------------------
-# Copyright (C) 2017-2018 Dominik Salvet
+# Copyright 2017-2018 Dominik Salvet
 # SPDX-License-Identifier: MIT
 # https://gitlab.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ OPTION:
 ABOUT_MESSAGE="ux430ua-jack-volume $VERSION
 Fix low 3.5 mm jack output audio volume of ASUS ZenBook UX430UA on Linux.
 
-Copyright (C) 2017-2018 Dominik Salvet
+Copyright 2017-2018 Dominik Salvet
 SPDX-License-Identifier: MIT
 https://gitlab.com/dominiksalvet/ux430ua-jack-volume"
 
