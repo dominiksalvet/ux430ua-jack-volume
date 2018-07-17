@@ -6,14 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 The changes not yet present in any release are listed in this section.
 
-## 1.2.1 (2018-07-17)
+## [1.2.1](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/compare/1.2.0...1.2.1) (2018-07-17)
 
 ### Fixed
 
 * There is no more error message when the */etc/rc.local* file doesn't exist before the installation.
 * The `post` parameter from the systemd after waking up from sleep no longer prevents the program from it's execution.
 
-## 1.2.0 (2018-07-16)
+## [1.2.0](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/compare/1.1.0...1.2.0) (2018-07-16)
 
 ### Fixed
 
@@ -27,7 +27,7 @@ The changes not yet present in any release are listed in this section.
 * Check if running as root is done at the last minute, so more information is accessible without root permissions.
 * The uninstallation detects the installation directory from the */etc/rc.local* file, so no more `INSTALL_DIR` parameter is required even with a custom installation directory.
 
-## 1.1.0 (2018-07-10)
+## [1.1.0](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/compare/1.0.0...1.1.0) (2018-07-10)
 
 ### Changed
 
