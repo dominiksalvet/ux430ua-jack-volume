@@ -10,7 +10,7 @@ The described problem can be solved with this program. The program includes an i
 * **systemd** init system
 * **APT** package manager
 
-## Tested operating systems
+### Tested operating systems
 
 * Ubuntu 16.04
 * Linux Mint 18.2
