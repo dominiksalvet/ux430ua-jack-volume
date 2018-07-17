@@ -1,6 +1,6 @@
 # ASUS ZenBook UX430UA Jack Volume Setup
 
-In the default setup of the ASUS ZenBook UX430UA running Linux, output volume of 3.5 mm jack audio often has a low coefficient, so audio volume of 3.5 mm devices is scaled down significantly compared to what it should be. The problem occurs with some delay after plugging-in a 3.5 mm device. So even despite of adjusting sound volume level on the 3.5 mm device, if possible, after plugging this 3.5 mm device in, it's sound volume is very high for a while and then jumps down to the adjusted level, which may be very unpleasant.
+In the default setup of the ASUS ZenBook UX430UA running Linux, output volume of 3.5 mm jack audio often has a low coefficient, so **audio volume of 3.5 mm devices is scaled down significantly** compared to what it should be. The problem occurs with some delay after plugging-in a 3.5 mm device. So even despite of adjusting sound volume level on the 3.5 mm device, if possible, after plugging this 3.5 mm device in, it's sound volume is very high for a while and then jumps down to the adjusted level, which may be very unpleasant.
 
 The described problem can be solved with this program. The program includes an intelligently designed makefile for easier installation.
 
@@ -19,7 +19,7 @@ The described problem can be solved with this program. The program includes an i
 
 ## Installation
 
-To install the latest stable release of this program **automatically**, open a terminal emulator and use the following commands:
+To **automatically install** the latest stable release of this program, open a terminal emulator and use the following commands:
 
 ```sh
 cd ~/Downloads/ &&
@@ -36,7 +36,7 @@ After the installation, the *~/Downloads/ux430ua-jack-volume* directory won't be
 
 ---
 
-If it is required to **uninstall** the latest stable release of this program **automatically**, open a terminal emulator and use the following commands:
+If it is required to **automatically uninstall** the latest stable release of this program, open a terminal emulator and use the following commands:
 
 ```sh
 cd ~/Downloads/ &&
@@ -50,7 +50,7 @@ sudo make uninstall
 
 ### Choose the installation directory
 
-The default installation directory is */usr/local/bin*. To change it, pass your desired installation directory path as an absolute path in `INSTALL_DIR` variable to the `sudo make install` command. An example follows:
+The default installation directory is */usr/local/bin* as it should be included in the `$PATH` variable. However, for the program to work, it is not required that and so to change it, pass your desired installation directory path as an absolute path in `INSTALL_DIR` variable to the `sudo make install` command. For example:
 
 ```sh
 sudo make install INSTALL_DIR=/opt

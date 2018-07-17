@@ -11,14 +11,14 @@ If you have any suggestions on development of the project, follow these steps:
 
 ## Merge requests
 
-**Except the merge requests with bug fixes**, every merge request must precede creating an issue as described in the [previous section](#suggestions) and also must be approved. Then, follow these steps:
+**Except the merge requests with bug fixes**, every merge request must precede creating an issue as described in the [previous section](#suggestions) and also must be approved. Then, continue as described below:
 
 1. Fork this project.
 2. Create a new branch with descriptive name according to your changes.
 3. Note your changes to the [Unreleased](CHANGELOG.md#unreleased) section in the [*CHANGELOG.md*](CHANGELOG.md) file.
 4. Commit and push your changes to the branch.
-5. Submit a [new merge request](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/merge_requests/new) with **clear description of the problem and solution**. Also include the relevant issue number if applicable.
+5. Submit a [new merge request](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/merge_requests/new) with **clear description of the problem and it's solution**. Also include the relevant issue number if applicable.
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the same license that is published in the [*LICENSE.md*](LICENSE.md) file.
+By contributing, you agree that your contributions will be licensed under the same license that is published in the [*LICENSE.md*](LICENSE.md) file with you as the author.
