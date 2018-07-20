@@ -8,6 +8,10 @@ The changes not yet present in any release are listed in this section.
 
 ## 1.2.2 (2018-07-20)
 
+### Fixed
+
+* The uninstaller no longer uninstalls all programs with the following pattern `'$INSTALL_DIR/ux430ua-jack-volume'*`.
+
 ### Added
 
 * Check dependencies in the `ux430ua-jack-volume` program.
