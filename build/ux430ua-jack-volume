@@ -8,11 +8,27 @@
 
 
 #-------------------------------------------------------------------------------
+# SOFTWARE DEPENDENCIES
+#-------------------------------------------------------------------------------
+
+# list of required software
+SW_REQUIRED='echo [ id hda-verb'
+
+# check if some software is missing
+for i in $SW_REQUIRED; do
+    # software is missing if at least one piece of software is missing
+    if ! command -v "$i" > /dev/null; then
+        echo "$0: Required software '$i' is missing, installation canceled." >&2
+        exit 1
+    fi
+done
+
+#-------------------------------------------------------------------------------
 # DEFINITIONS
 #-------------------------------------------------------------------------------
 
 # the current version of the program
-VERSION='1.2.1'
+VERSION='1.2.2'
 
 HELP_MESSAGE="Usage: $0 [OPTION]...
 
