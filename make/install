@@ -118,10 +118,7 @@ echo "#!/bin/sh
 
 $INSTALL_DIR/ux430ua-jack-volume" > /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
 chmod a+x /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
-sed -i -E -e '/'"$CONTAINS_EXIT_0"'/{s//'"'$INSTALL_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'\n&/; :add_line; N; badd_line}' /etc/rc.local || {
-    echo "$0: Final steps of the installation have failed, try installing again." >&2
-    exit 1
-}
+sed -i -E -e '/'"$CONTAINS_EXIT_0"'/{s//'"'$INSTALL_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'\n&/; :add_line; N; badd_line}' /etc/rc.local || exit 1
 
 # apply the changes immediately (it may not be successful as the program dependencies may be missing)
 "$INSTALL_DIR"/ux430ua-jack-volume
