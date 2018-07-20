@@ -10,7 +10,7 @@ The changes not yet present in any release are listed in this section.
 
 ### Fixed
 
-* The uninstaller no longer uninstalls all programs with the following pattern `'$INSTALL_DIR/ux430ua-jack-volume'*`.
+* The uninstaller no longer uninstalls all programs with the following pattern `'$INSTALL_DIR/ux430ua-jack-volume'*` in the */etc/rc.local* file.
 
 ### Added
 
