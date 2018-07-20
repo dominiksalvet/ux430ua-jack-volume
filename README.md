@@ -8,7 +8,7 @@ The described problem can be solved with this program. The program includes an i
 
 * **Linux** operating system
 * **systemd** init system
-* **APT** package manager
+* **Debian packaging** support
 
 ### Tested operating systems
 
