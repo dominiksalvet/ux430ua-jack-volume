@@ -51,7 +51,7 @@ if [ -z "$1" ] || [ -z "$2" ]; then
 fi
 
 # check if already installed
-if INSTALLED_PATH="$(grep -s -m 1 -E -e 'ux430ua-jack-volume' /etc/rc.local)"; then
+if INSTALLED_PATH="$(grep -s -m 1 -E -e '^[[:blank:]]*'"'"'.*\/ux430ua-jack-volume'"'"'(| .*)$' /etc/rc.local)"; then
     # get the installation directory from the installation path
     INSTALLED_DIR="$(echo "$INSTALLED_PATH" | sed -E -e "s/^'//; s/'$//; s|/[^/]*$||")"
 
