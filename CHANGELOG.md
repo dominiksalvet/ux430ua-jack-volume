@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 The changes not yet present in any release are listed in this section.
 
+## 1.2.3 (2018-07-21)
+
+### Fixed
+
+* Path with spaces in systemd caller is allowed.
+
 ## 1.2.2 (2018-07-20)
 
 ### Fixed

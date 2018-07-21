@@ -116,7 +116,7 @@ chmod a+x "$INSTALL_DIR/ux430ua-jack-volume" &&
 # create ux430ua-jack-volume caller
 echo "#!/bin/sh
 
-$INSTALL_DIR/ux430ua-jack-volume" > /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
+'$INSTALL_DIR/ux430ua-jack-volume'" > /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
 chmod a+x /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
 sed -i -E -e '/'"$CONTAINS_EXIT_0"'/{s//'"'$INSTALL_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'\n&/; :add_line; N; badd_line}' /etc/rc.local || exit 1
 
