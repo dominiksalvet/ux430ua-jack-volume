@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 The changes not yet present in any release are listed in this section.
 
-## 1.2.3 (2018-07-23)
+## 1.2.3 (2018-07-24)
 
 ### Fixed
 
@@ -14,14 +14,14 @@ The changes not yet present in any release are listed in this section.
 
 ## 1.2.2 (2018-07-20)
 
+### Added
+
+* Check dependencies in the `ux430ua-jack-volume` program.
+
 ### Fixed
 
 * The uninstaller no longer uninstalls all programs with the following pattern `'$INSTALL_DIR/ux430ua-jack-volume'*` in the */etc/rc.local* file.
 * Installation manager no longer detects the installation directory from the */etc/rc.local* based on searching first match to `ux430ua-jack-volume`.
-
-### Added
-
-* Check dependencies in the `ux430ua-jack-volume` program.
 
 ## 1.2.1 (2018-07-17)
 
@@ -32,11 +32,6 @@ The changes not yet present in any release are listed in this section.
 
 ## 1.2.0 (2018-07-16)
 
-### Fixed
-
-* If passed a custom installation directory path, it must be absolute.
-* Previous installation of the program can be detected during installation even if the program is installed in a different directory than the one defined by `INSTALL_DIR`.
-
 ### Changed
 
 * Installation has been split into dependency installation and the program installation.
@@ -44,22 +39,27 @@ The changes not yet present in any release are listed in this section.
 * Check if running as root is done at the last minute, so more information is accessible without root permissions.
 * The uninstallation detects the installation directory from the */etc/rc.local* file, so no more `INSTALL_DIR` parameter is required even with a custom installation directory.
 
+### Fixed
+
+* If passed a custom installation directory path, it must be absolute.
+* Previous installation of the program can be detected during installation even if the program is installed in a different directory than the one defined by `INSTALL_DIR`.
+
 ## 1.1.0 (2018-07-10)
-
-### Changed
-
-* No need of restart device after the installation, changes are applied immediately.
 
 ### Added
 
 * The program prints only version using the `-version` option.
 
+### Changed
+
+* No need of restart device after the installation, changes are applied immediately.
+
 ## 1.0.0 (2018-07-08)
-
-### Fixed
-
-* The installation directory path can contain spaces.
 
 ### Changed
 
 * All scrips use SH environment instead of previously used BASH.
+
+### Fixed
+
+* The installation directory path can contain spaces.
