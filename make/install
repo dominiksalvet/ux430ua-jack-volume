@@ -16,7 +16,7 @@
 #-------------------------------------------------------------------------------
 
 # list of required software
-SW_REQUIRED='command echo [ id grep cat chmod sed'
+SW_REQUIRED='command echo [ id grep cat chmod sed mkdir cp'
 
 # check if some software is missing
 for i in $SW_REQUIRED; do
@@ -31,14 +31,17 @@ done
 # DEFINITIONS
 #-------------------------------------------------------------------------------
 
+# sed script - regular expression of line containing a successful exit of a shell script
+CONTAINS_EXIT_0='^[[:blank:]]*exit(|[[:blank:]]+0+)([[:blank:]]*|[[:blank:]]+#.*)$'
+
+# configuration files directory
+CONFIG_DIR=/etc/ux430ua-jack-volume-config
+
 # normalize the installation directory path represented by '$2' parameter
 INSTALL_DIR="$(echo "$2" | sed -E -e 's|/+|/|g; s|/$||')"
 
 # escape delimiters of the installation directory path for later use in a sed script
 INSTALL_DIR_ESCAPED="$(echo "$INSTALL_DIR" | sed -E -e 's|/|\\/|g')"
-
-# sed script - regular expression of line containing a successful exit of a shell script
-CONTAINS_EXIT_0='^[[:blank:]]*exit(|[[:blank:]]+0+)([[:blank:]]*|[[:blank:]]+#.*)$'
 
 #-------------------------------------------------------------------------------
 # CHECK STATE
@@ -51,9 +54,9 @@ if [ -z "$1" ] || [ -z "$2" ]; then
 fi
 
 # check if already installed
-if INSTALLED_PATH="$(grep -s -m 1 -E -e '^[[:blank:]]*'"'"'.*\/ux430ua-jack-volume'"'"'(| .*)$' /etc/rc.local)"; then
-    # get the installation directory from the installation path
-    INSTALLED_DIR="$(echo "$INSTALLED_PATH" | sed -E -e "s/^'//; s/'$//; s|/[^/]*$||")"
+if [ -f "$CONFIG_DIR/install-dir" ]; then
+    # get the installation directory
+    INSTALLED_DIR="$(cat "$CONFIG_DIR/install-dir")"
 
     if [ "$INSTALL_DIR" = "$INSTALLED_DIR" ]; then
         echo "The program is already installed in '$INSTALLED_DIR/', installation canceled."
@@ -80,9 +83,6 @@ fi
 if [ ! -f "$1/ux430ua-jack-volume" ]; then
     echo "$0: '$1/ux430ua-jack-volume' does not exist, installation canceled." >&2
     exit 1
-else
-    # load ux430ua-jack-volume file content into variable to prevent deletion of this file during the following steps
-    ux430ua_jack_volume_string=$(cat "$1/ux430ua-jack-volume")
 fi
 
 #-------------------------------------------------------------------------------
@@ -110,17 +110,21 @@ fi
 # set the execution permission of '/etc/rc.local'
 chmod a+x /etc/rc.local
 
-# apply 3.5 mm jack output volume setup
-echo "$ux430ua_jack_volume_string" > "$INSTALL_DIR/ux430ua-jack-volume" &&
-chmod a+x "$INSTALL_DIR/ux430ua-jack-volume" &&
-# create ux430ua-jack-volume caller
+# create configuration file with the installation directory path
+mkdir -p "$CONFIG_DIR/" &&
+echo "$INSTALL_DIR" > "$CONFIG_DIR/install-dir" &&
+# copy the program
+cp "$1/ux430ua-jack-volume" "$INSTALL_DIR/" &&
+# add script calling to '/etc/rc.local' file to run the program after boot
+sed -i -E -e '/'"$CONTAINS_EXIT_0"'/{s//'"'$INSTALL_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'\n&/; :add_line; N; badd_line}' /etc/rc.local &&
+# create ux430ua-jack-volume-caller for systemd
 echo "#!/bin/sh
 
 '$INSTALL_DIR/ux430ua-jack-volume'" > /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
-chmod a+x /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
-sed -i -E -e '/'"$CONTAINS_EXIT_0"'/{s//'"'$INSTALL_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'\n&/; :add_line; N; badd_line}' /etc/rc.local || exit 1
+chmod a+x /lib/systemd/system-sleep/ux430ua-jack-volume-caller || exit 1
 
 # apply the changes immediately (it may not be successful as the program dependencies may be missing)
+echo 'Applying changes.'
 "$INSTALL_DIR"/ux430ua-jack-volume
 
 # final message
