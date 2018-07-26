@@ -8,7 +8,7 @@ The changes not yet present in any release are listed in this section.
 
 ### Added
 
-* Check for hardware if supported.
+* Check for character device file */dev/snd/hwC0D0* existence.
 
 ### Changed
 
