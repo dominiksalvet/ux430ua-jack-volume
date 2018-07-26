@@ -25,9 +25,7 @@ done
 
 # check if character device file for sound driving exists
 if [ ! -c /dev/snd/hwC0D0 ]; then
-    echo "$0: Character device file '/dev/snd/hwC0D0' doesn't exist, action canceled.
-POSSIBLE CAUSES:
-  * the program doesn't support this device" >&2
+    echo "$0: Character device file '/dev/snd/hwC0D0' doesn't exist, action canceled." >&2
     exit 1
 fi
 
