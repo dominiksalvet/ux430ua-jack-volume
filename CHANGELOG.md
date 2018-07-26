@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 The changes not yet present in any release are listed in this section.
 
+### Added
+
+* Check for hardware if supported.
+
 ### Changed
 
 * The installation manager now creates a configuration file */etc/ux430ua-jack-volume/install-dir* where the installation directory path is stored rather than parsing the */etc/rc.local* file.
