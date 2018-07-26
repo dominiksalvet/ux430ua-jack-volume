@@ -44,7 +44,7 @@ if [ ! -d ux430ua-jack-volume/ ]; then # check if local repository exists
     git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git # if not, clone it
 fi &&
 cd ux430ua-jack-volume/ && # change directory to it
-git checkout -q "$(ux430ua-jack-volume -version)" && # checkout to your program's version release repository
+git checkout -q "$(ux430ua-jack-volume -version)" && # checkout to your program's release repository
 sudo make uninstall # uninstall the program (it doesn't uninstall dependencies)
 ```
 
