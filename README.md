@@ -22,35 +22,37 @@ The described problem can be solved with this program. The program includes an i
 To **automatically install** the latest stable release of this program, open a terminal emulator and use the following commands:
 
 ```sh
-cd ~/Downloads/ &&
-if [ ! -d ux430ua-jack-volume/ ]; then
-    git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
+cd ~/Downloads/ && # change directory to the 'Downloads' directory
+if [ ! -d ux430ua-jack-volume/ ]; then # check if local repository exists
+    git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git # if not, clone it
 fi &&
-cd ux430ua-jack-volume/ &&
-git checkout -q "$(git describe --abbrev=0)" &&
-sudo make install-deps &&
-sudo make install
+cd ux430ua-jack-volume/ && # change directory to it
+git checkout -q "$(git describe --abbrev=0)" && # checkout the latest release repository
+sudo make install-deps && # install dependencies
+sudo make install # install the program
 ```
 
 After the installation, the *~/Downloads/ux430ua-jack-volume* directory won't be required for the program to be working and so it can be removed.
 
 ---
 
-If it is required to **automatically uninstall** the latest stable release of this program, open a terminal emulator and use the following commands:
+If it is required to **automatically uninstall** your current release of this program installed in the default installation directory ([steps](#installation) stated above do so), open a terminal emulator and use the following commands:
 
 ```sh
-cd ~/Downloads/ &&
-if [ ! -d ux430ua-jack-volume/ ]; then
-    git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
+cd ~/Downloads/ && # change directory to the 'Downloads' directory
+if [ ! -d ux430ua-jack-volume/ ]; then # check if local repository exists
+    git clone -q https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git # if not, clone it
 fi &&
-cd ux430ua-jack-volume/ &&
-git checkout -q "$(git describe --abbrev=0)" &&
-sudo make uninstall
+cd ux430ua-jack-volume/ && # change directory to it
+git checkout -q "$(ux430ua-jack-volume -version)" && # checkout to your program's version release repository
+sudo make uninstall # it doesn't uninstall dependencies
 ```
+
+However, it will not work for release 1.0.0 where manual `git checkout 1.0.0` command must be executed before the `sudo make uninstall` command.
 
 ### Choose the installation directory
 
-The default installation directory is */usr/local/bin* as it should be included in the `$PATH` variable. However, for the program to work, it is not required that and so to change it, pass your desired installation directory path as an absolute path in `INSTALL_DIR` variable to the `sudo make install` command. For example:
+The default installation directory is */usr/local/bin* as it should be included in the `$PATH` variable. However, for the program to work, it is not required that and so to change it, pass your desired installation directory path in `INSTALL_DIR` variable to the `sudo make install` command. For example:
 
 ```sh
 sudo make install INSTALL_DIR=/opt
