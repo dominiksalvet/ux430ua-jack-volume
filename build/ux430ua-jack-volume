@@ -19,6 +19,11 @@ for i in $SW_REQUIRED; do
     # software is missing if at least one piece of software is missing
     if ! command -v "$i" > /dev/null; then
         echo "$0: Required software '$i' is missing, action canceled." >&2
+        # the program dependencies may be missing
+        if [ "$i" = 'hda-verb' ]; then
+            echo 'POSSIBLE SOLUTIONS:
+  * install program dependencies' >&2
+        fi
         exit 1
     fi
 done
