@@ -45,7 +45,7 @@ if [ ! -d ux430ua-jack-volume/ ]; then # check if local repository exists
 fi &&
 cd ux430ua-jack-volume/ && # change directory to it
 git checkout -q "$(ux430ua-jack-volume -version)" && # checkout to your program's version release repository
-sudo make uninstall # it doesn't uninstall dependencies
+sudo make uninstall # uninstall the program (it doesn't uninstall dependencies)
 ```
 
 However, it will not work for release 1.0.0 where manual `git checkout 1.0.0` command must be executed before the `sudo make uninstall` command.
