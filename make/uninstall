@@ -36,7 +36,7 @@ CONFIG_DIR=/etc/ux430ua-jack-volume-config
 
 # check if installed
 if [ ! -f "$CONFIG_DIR/install-dir" ]; then
-    echo "The uninstaller can't detect the program on this system, uninstallation canceled."
+    echo "The uninstaller can't detect the program installed on this system, uninstallation canceled."
     exit 0
 fi
 

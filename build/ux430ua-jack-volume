@@ -20,7 +20,7 @@ for i in $SW_REQUIRED; do
     if ! command -v "$i" > /dev/null; then
         echo "$0: Required software '$i' is missing, action canceled." >&2
         # the program dependencies may be missing
-        if [ "$i" = 'hda-verb' ]; then
+        if [ "$i" = hda-verb ]; then
             echo 'POSSIBLE SOLUTIONS:
   * install program dependencies' >&2
         fi
@@ -39,7 +39,7 @@ fi
 #-------------------------------------------------------------------------------
 
 # the current version of the program
-VERSION='1.2.3'
+VERSION=1.2.3
 
 HELP_MESSAGE="Usage: $0 [OPTION]...
 
