@@ -61,7 +61,7 @@ sed -i -E -e '/^[[:blank:]]*'"'.*\/ux430ua-jack-volume'"'(| .*)$/d' /etc/rc.loca
 sed -i -E -e '/^[[:blank:]]*([^[:blank:]]|\\ |\\	)*\/ux430ua-jack-volume(| .*)$/d' /etc/rc.local
 # remove the program itself
 rm "$INSTALLED_DIR/ux430ua-jack-volume"
-# write changes to a configuration file
+# finish removing the program by deleting the 'install-dir' file
 rm "$CONFIG_DIR/install-dir"
 
 # final message
