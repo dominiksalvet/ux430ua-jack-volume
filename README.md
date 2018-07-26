@@ -36,7 +36,7 @@ After the installation, the *~/Downloads/ux430ua-jack-volume* directory won't be
 
 ---
 
-If it is required to **automatically uninstall** your current release of this program installed in the default installation directory ([steps](#installation) stated above do so), open a terminal emulator and use the following commands:
+If it is required to **automatically uninstall your current release** of this program installed in the default installation directory ([steps](#installation) stated above do so), open a terminal emulator and use the following commands:
 
 ```sh
 cd ~/Downloads/ && # change directory to the 'Downloads' directory
