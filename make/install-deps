@@ -36,5 +36,5 @@ fi
 # install the following package to control the jack sound volume level
 apt install alsa-tools -y || exit 1
 
-# final messaged
+# final message
 echo 'Installation of dependencies finished successfully!'
