@@ -9,6 +9,7 @@ The changes not yet present in any release are listed in this section.
 ### Added
 
 * Check for character device file */dev/snd/hwC0D0* existence.
+* Support relative paths across all delivered software with the program and within the program itself.
 
 ### Changed
 
