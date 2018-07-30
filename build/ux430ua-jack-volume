@@ -28,14 +28,6 @@ for i in $SW_REQUIRED; do
     fi
 done
 
-# check if character device file for sound driving exists
-if [ ! -c /dev/snd/hwC0D0 ]; then
-    echo "$0: Character device file '/dev/snd/hwC0D0' doesn't exist, action canceled.
-POSSIBLE CAUSES:
-  * ALSA framework is not used on this system" >&2
-    exit 1
-fi
-
 #-------------------------------------------------------------------------------
 # DEFINITIONS
 #-------------------------------------------------------------------------------
@@ -87,6 +79,14 @@ done
 #-------------------------------------------------------------------------------
 # APPLY CONFIGURATION
 #-------------------------------------------------------------------------------
+
+# check if character device file for sound driving exists
+if [ ! -c /dev/snd/hwC0D0 ]; then
+    echo "$0: Character device file '/dev/snd/hwC0D0' doesn't exist, action canceled.
+POSSIBLE CAUSES:
+  * ALSA framework is not used on this system" >&2
+    exit 1
+fi
 
 # check if running as root
 if [ "$(id -u)" -ne 0 ]; then
