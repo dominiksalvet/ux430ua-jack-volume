@@ -57,8 +57,6 @@ Copyright 2017-2018 Dominik Salvet
 SPDX-License-Identifier: MIT
 https://gitlab.com/dominiksalvet/ux430ua-jack-volume"
 
-HINT_MESSAGE="Try '$0 -help' for more information."
-
 #-------------------------------------------------------------------------------
 # PROCESSING PARAMETERS
 #-------------------------------------------------------------------------------
@@ -79,8 +77,8 @@ for i in "$@"; do
             exit 0
             ;;
         *)
-            echo "$0: The option '$i' was not recognized." >&2
-            echo "$HINT_MESSAGE" >&2
+            echo "$0: The option '$i' was not recognized.
+Try '$0 -help' for more information." >&2
             exit 1
             ;;
     esac
