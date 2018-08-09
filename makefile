@@ -41,6 +41,16 @@ define display_generated_help
 	@$(SED) -E -e "$$GET_TARGET_DESCRIPTIONS" $(1) | $(COLUMN) -t -s '#'
 endef
 
+# message about this makefile
+define ABOUT_MESSAGE
+Installation manager for 'ux430ua-jack-volume' program.
+
+Copyright 2018 Dominik Salvet
+SPDX-License-Identifier: MIT
+https://gitlab.com/dominiksalvet/ux430ua-jack-volume
+endef
+export ABOUT_MESSAGE
+
 #-------------------------------------------------------------------------------
 # TARGETS
 #-------------------------------------------------------------------------------
@@ -63,8 +73,4 @@ help: # default, display this help
 	$(call display_generated_help,makefile)
 
 about: # display information about this makefile
-	@$(ECHO) "Installation manager for 'ux430ua-jack-volume' program."
-	@$(ECHO)
-	@$(ECHO) 'Copyright 2018 Dominik Salvet'
-	@$(ECHO) 'SPDX-License-Identifier: MIT'
-	@$(ECHO) 'https://gitlab.com/dominiksalvet/ux430ua-jack-volume'
+	@$(ECHO) "$$ABOUT_MESSAGE"
