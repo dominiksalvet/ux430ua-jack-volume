@@ -1,6 +1,3 @@
-Valid-License-Identifier: MIT
-License-Text:
-
 MIT License
 
 Copyright (c) <year> <copyright holders>

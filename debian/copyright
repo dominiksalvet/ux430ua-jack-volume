@@ -2,6 +2,10 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: ux430ua-jack-volume
 Source: https://gitlab.com/dominiksalvet/ux430ua-jack-volume
 
-Files: CHANGELOG.md CONTRIBUTING.md README.md
+Files: README.md
 Copyright: Copyright 2017-2018 Dominik Salvet
+License: MIT
+
+Files: CHANGELOG.md CONTRIBUTING.md
+Copyright: Copyright 2018 Dominik Salvet
 License: MIT
