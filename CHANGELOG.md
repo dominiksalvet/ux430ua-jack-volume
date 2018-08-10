@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 The changes not yet present in any release are listed in this section.
 
-## 1.3.0 (2018-07-26)
+## 1.3.0 (2018-08-10)
 
 ### Added
 
@@ -17,6 +17,7 @@ The changes not yet present in any release are listed in this section.
 
 * The installation manager now creates a configuration file */etc/ux430ua-jack-volume/install-dir* where the installation directory path is stored rather than parsing the */etc/rc.local* file.
 * The program is quiet when no error.
+* This project licensing policy is compliant with [REUSE Practices](https://reuse.software/practices/2.0/).
 
 ## 1.2.3 (2018-07-24)
 

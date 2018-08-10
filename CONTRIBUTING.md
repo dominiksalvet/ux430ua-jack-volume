@@ -21,4 +21,4 @@ If you have any suggestions on development of the project, follow these steps:
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the same license that is published in the [*LICENSE.txt*](LICENSE.txt) file with you as the author.
+By contributing, you agree that your contribution will be licensed under the same license as the affected files are. In case of creating a new file, choose the most appropriate license with respect to the project [licensing policy](README.md#license) and the type of file you created. Otherwise, the contribution may not be approved.

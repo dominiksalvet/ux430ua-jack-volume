@@ -70,4 +70,4 @@ In case of uninstalling from a custom installation directory, this variable is n
 
 ## License
 
-All files of this project are implicitly licensed under an [Open Source Initiative](https://opensource.org/) approved license, the MIT License - see the [*LICENSE.txt*](LICENSE.txt) file for details. Additionally, individual files may contain the [SPDX](https://spdx.org/) license identifier as a shortcut for the full text of a license, and in this case they are always licensed under the license defined by that license identifier even if it differs from the project license.
+Licensing policy of this project is compliant with [REUSE Practices](https://reuse.software/practices/2.0/). Thus, the license of a file is determined by a [SPDX](https://spdx.org/) License Identifier or the [*debian/copyright*](debian/copyright) file is used.
