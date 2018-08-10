@@ -70,4 +70,4 @@ In case of uninstalling from a custom installation directory, this variable is n
 
 ## License
 
-Licensing policy of this project is compliant with [REUSE Practices](https://reuse.software/practices/2.0/). Therefore, the license of a file is determined either by a [SPDX](https://spdx.org/) License Identifier or by the [*debian/copyright*](debian/copyright) file contents.
+Licensing policy of this project is compliant with [REUSE Practices](https://reuse.software/practices/2.0/). Therefore, the license of a file is determined by a [SPDX](https://spdx.org/) License Identifier or by the [*debian/copyright*](debian/copyright) file contents.
