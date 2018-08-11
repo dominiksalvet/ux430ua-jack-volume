@@ -68,7 +68,7 @@ git checkout "$(ux430ua-jack-volume -version)" && # use the program version as a
 sudo make uninstall # uninstall the program (it doesn't uninstall dependencies)
 ```
 
-However, it will not work for release 1.0.0 and when the program is not installed in the default installation directory. In those cases manual `git checkout <installed_version>` command must be executed before the `sudo make uninstall` command.
+However, it will not work for release 1.0.0 and when the program is **not installed in the default installation directory**. In those cases manual `git checkout <installed_version>` command must be executed before the `sudo make uninstall` command.
 
 ---
 
