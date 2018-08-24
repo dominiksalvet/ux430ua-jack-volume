@@ -9,6 +9,10 @@ The described problem can be solved with this program. The program includes an i
 ## Table of Contents
 
 * [Install](#install)
+  * [System requirements](#system-requirements)
+  * [Tested operating systems](#tested-operating-systems)
+  * [Instructions](#instructions)
+  * [Choose the installation directory](#choose-the-installations-directory)
 * [Usage](#usage)
 * [Contribute](#contribute)
 * [License](#license)
@@ -31,55 +35,34 @@ The described problem can be solved with this program. The program includes an i
 
 ### Instructions
 
-To **automatically install the latest stable release** of this program, open a terminal emulator and use the following commands:
+This project is [**gim**](https://gitlab.com/dominiksalvet/gim) **compliant** since it's version 1.4.0 and so to **automatically install it's latest stable release**, open a terminal emulator and use the following command:
 
 ```sh
-cd ~/Downloads/ && # change directory to the 'Downloads' directory
-if cd ux430ua-jack-volume/ 2>/dev/null; then # check if local repository exists
-    git checkout master && # checkout the master for the pull command
-    git pull && # get the most recent state of the repository
-    git fetch --tags # in case of any release commit change
-else
-    git clone https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git && # clone it
-    cd ux430ua-jack-volume/ # and change directory to the downloaded repository
-fi &&
-git checkout "$(git describe --abbrev=0)" && # use the latest repository tag
-sudo make install-deps && # install dependencies
-sudo make install # install the program
+sudo gim install https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
 ```
 
-After the installation, the *~/Downloads/ux430ua-jack-volume* directory won't be required for the program to be working and so it can be removed.
+If it is required to **automatically uninstall your current release** with version 1.4.0 and higher, use the following command:
+
+```sh
+sudo gim uninstall https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
+```
+
+To **automatically update the project** from version 1.4.0 and higher to **it's latest version**, use the following command:
+
+```sh
+sudo gim update https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
+```
 
 ---
 
-If it is required to **automatically uninstall your current release** of this program installed in the default installation directory (the [commands](#instructions) stated above do so), open a terminal emulator and use the following commands:
-
-```sh
-cd ~/Downloads/ && # change directory to the 'Downloads' directory
-if cd ux430ua-jack-volume/ 2>/dev/null; then # check if local repository exists
-    git checkout master && # checkout the master for the pull command
-    git pull && # get the most recent state of the repository
-    git fetch --tags # in case of any release commit change
-else
-    git clone https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git && # clone it
-    cd ux430ua-jack-volume/ # and change directory to the downloaded repository
-fi &&
-git checkout "$(ux430ua-jack-volume -version)" && # use the program version as a tag
-sudo make uninstall # uninstall the program (it doesn't uninstall dependencies)
-```
-
-However, it will not work for release 1.0.0 and when the program is **not installed in the default installation directory**. In those cases manual `git checkout <installed_version>` command must be executed before the `sudo make uninstall` command.
-
----
-
-To **update the program**, uninstall it and install it again using the steps stated above.
+If it is required to update or uninstall project, whose version is lower than 1.4.0, see the [README.md](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/blob/1.3.0/README.md) file of the 1.3.0 version, last version with previously used installation management system.
 
 ### Choose the installation directory
 
-The default installation directory is */usr/local/bin* as it should be included in the `$PATH` variable. However, for the program to work, it is not required that and so to change it, pass your desired installation directory path in `INSTALL_DIR` variable to the `sudo make install` command. For example:
+The default installation directory is */usr/local/bin* as it is included in the `$PATH` variable. However, you can choose your desired installation directory as long as it is included in the `$PATH` variable. To do it, pass this directory path in `INSTALL_DIR` variable to the `gim` command as the last argument. For example:
 
 ```sh
-sudo make install INSTALL_DIR=/opt
+sudo gim install https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git INSTALL_DIR=~/.local/bin
 ```
 
 In case of uninstalling from a custom installation directory, this variable is not required; the uninstaller automatically detects where the installation directory is.
