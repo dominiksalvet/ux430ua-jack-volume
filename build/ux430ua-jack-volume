@@ -18,7 +18,7 @@ SW_REQUIRED='command echo [ id hda-verb'
 for i in $SW_REQUIRED; do
     # software is missing if at least one piece of software is missing
     if ! command -v "$i" > /dev/null; then
-        echo "$0: Required software '$i' is missing, action canceled." >&2
+        echo "$0: Required software '$i' is missing." >&2
         # the program dependencies may be missing
         if [ "$i" = hda-verb ]; then
             echo 'POSSIBLE SOLUTIONS:
@@ -35,7 +35,7 @@ done
 # the current version of the program
 VERSION=1.3.0
 
-HELP_MESSAGE="Usage: $0 [OPTION]...
+HELP_MESSAGE="USAGE: $0 [OPTION]...
 
 OPTION:
   -help     show this help and exit
@@ -70,7 +70,8 @@ for i in "$@"; do
             ;;
         *)
             echo "$0: The option '$i' was not recognized.
-Try '$0 -help' for more information." >&2
+POSSIBLE SOLUTIONS:
+  * use the '$0 -help' command for more information" >&2
             exit 1
             ;;
     esac
@@ -82,7 +83,7 @@ done
 
 # check if character device file for sound driving exists
 if [ ! -c /dev/snd/hwC0D0 ]; then
-    echo "$0: Character device file '/dev/snd/hwC0D0' doesn't exist, action canceled.
+    echo "$0: Character device file '/dev/snd/hwC0D0' doesn't exist.
 POSSIBLE CAUSES:
   * ALSA framework is not used on this system" >&2
     exit 1
@@ -90,7 +91,7 @@ fi
 
 # check if running as root
 if [ "$(id -u)" -ne 0 ]; then
-    echo "$0: Please run as root, action canceled." >&2
+    echo "$0: Please run as root." >&2
     exit 1
 fi
 
