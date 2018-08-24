@@ -33,11 +33,11 @@ done
 # sed script - regular expression of line containing a successful exit of a shell script
 CONTAINS_EXIT_0='^[[:blank:]]*exit(|[[:blank:]]+0+)([[:blank:]]*|[[:blank:]]+#.*)$'
 
-# get real path of the installation directory path
+# installation directory of this program
 INSTALL_DIR=/usr/local/bin
 
 # escape delimiters of the installation directory path for later use in a sed script
-INSTALL_DIR_ESCAPED='\/usr\/local\/bin'
+INSTALL_DIR_ESCAPED="$(echo "$INSTALL_DIR" | sed -E -e 's|/|\\/|g')"
 
 #-------------------------------------------------------------------------------
 # CHECK STATE

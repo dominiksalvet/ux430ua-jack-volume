@@ -27,7 +27,7 @@ done
 # DEFINITIONS
 #-------------------------------------------------------------------------------
 
-# get real path of the installation directory path
+# installation directory of this program
 INSTALL_DIR=/usr/local/bin
 
 #-------------------------------------------------------------------------------
