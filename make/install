@@ -43,18 +43,18 @@ INSTALL_DIR_ESCAPED="$(echo "$INSTALL_DIR" | sed -E -e 's|/|\\/|g')"
 # CHECK STATE
 #-------------------------------------------------------------------------------
 
-# check if already installed
-if [ -f "$INSTALL_DIR/ux430ua-jack-volume" ]; then
-    echo "The program is already installed."
-    exit 0
-fi
-
 # check if given installation directory exists
 if [ ! -d "$INSTALL_DIR/" ]; then
     echo "$0: Given installation directory '$INSTALL_DIR/' doesn't exist.
 POSSIBLE SOLUTIONS:
   * create '$INSTALL_DIR/' and repeat the action" >&2
     exit 1
+fi
+
+# check if already installed
+if [ -f "$INSTALL_DIR/ux430ua-jack-volume" ]; then
+    echo "The program is already installed."
+    exit 0
 fi
 
 # check if the build directory argument passed
