@@ -55,7 +55,7 @@ sudo gim update https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
 
 ---
 
-If it is required to update or uninstall project, whose version is lower than 1.4.0, see the [README.md](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/blob/1.3.0/README.md) file of the 1.3.0 version, last version with previously used installation management system.
+If it is required to **update or uninstall project, whose version is lower than 1.4.0**, see the [README.md](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/blob/1.3.0/README.md) file of the 1.3.0 version, last version with previously used installation management system.
 
 ### Choose the installation directory
 
