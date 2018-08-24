@@ -12,7 +12,7 @@ The described problem can be solved with this program. The program includes an i
   * [System requirements](#system-requirements)
   * [Tested operating systems](#tested-operating-systems)
   * [Instructions](#instructions)
-  * [Choose the installation directory](#choose-the-installations-directory)
+  * [Choose the installation directory](#choose-the-installation-directory)
 * [Usage](#usage)
 * [Contribute](#contribute)
 * [License](#license)
