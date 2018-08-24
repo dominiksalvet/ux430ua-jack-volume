@@ -34,7 +34,7 @@ The described problem can be solved with this program. The program includes an i
 
 ### Instructions
 
-This project is [gim](https://gitlab.com/dominiksalvet/gim) compliant since it's version 1.4.0 and so to **automatically install it's latest stable release**, open a terminal emulator and use the following command:
+This project is [gim](https://gitlab.com/dominiksalvet/gim) compliant since version 1.4.0. And so to **automatically install it's latest stable release**, open a terminal emulator and use the following command:
 
 ```sh
 sudo gim install https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
