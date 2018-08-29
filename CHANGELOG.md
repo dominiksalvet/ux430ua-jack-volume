@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 The changes not yet present in any release are listed in this section.
 
-## 2.0.0 (2018-08-27)
+## 2.0.0 (2018-08-29)
 
 ### Changed
 
@@ -28,7 +28,7 @@ The changes not yet present in any release are listed in this section.
 * The installation manager now creates a configuration file */etc/ux430ua-jack-volume/install-dir* where the installation directory path is stored rather than parsing the */etc/rc.local* file.
 * The program is quiet when no error.
 * This project licensing policy is compliant with [REUSE Practices](https://reuse.software/practices/2.0/).
-* The [*README.md*](README.md) file is [Standard-Readme](https://github.com/RichardLitt/standard-readme) compliant.
+* The *README.md* file is [Standard-Readme](https://github.com/RichardLitt/standard-readme) compliant.
 
 ## 1.2.3 (2018-07-24)
 
