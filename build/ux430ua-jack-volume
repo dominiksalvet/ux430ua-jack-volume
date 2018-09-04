@@ -22,7 +22,7 @@ for i in $SW_REQUIRED; do
         # the program dependencies may be missing
         if [ "$i" = hda-verb ]; then
             echo 'POSSIBLE SOLUTIONS:
-  * install program dependencies' >&2
+  * Install program dependencies.' >&2
         fi
         exit 1
     fi
@@ -71,7 +71,7 @@ for i in "$@"; do
         *)
             echo "$0: The option '$i' was not recognized.
 POSSIBLE SOLUTIONS:
-  * use the '$0 -help' command for more information" >&2
+  * Use the '$0 -help' command for getting help." >&2
             exit 1
             ;;
     esac
@@ -85,7 +85,7 @@ done
 if [ ! -c /dev/snd/hwC0D0 ]; then
     echo "$0: Character device file '/dev/snd/hwC0D0' doesn't exist.
 POSSIBLE CAUSES:
-  * ALSA framework is not used on this system" >&2
+  * ALSA framework is not used on this system." >&2
     exit 1
 fi
 
