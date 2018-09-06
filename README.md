@@ -2,9 +2,9 @@
 
 > Fix low 3.5 mm jack output audio volume of ASUS ZenBook UX430UA on Linux.
 
-In the default setup of the ASUS ZenBook UX430UA running some Linux distributions, output volume of 3.5 mm jack audio has a low coefficient, so **audio volume of 3.5 mm devices is scaled down significantly** compared to what it should be. The problem occurs with some delay after plugging-in a 3.5 mm device. So even despite of adjusting sound volume level on the 3.5 mm device, if possible, after plugging this 3.5 mm device in, it's sound volume is very high for a while and then jumps down to the adjusted level, which may be very unpleasant.
+In the default setup of the ASUS ZenBook UX430UA while running some Linux distributions, output volume of 3.5 mm jack audio has a low coefficient, so **audio volume of 3.5 mm devices is scaled down significantly** compared to what it should be on the selected sound volume. The problem occurs after booting up the system with a 3.5 mm jack plugged in or in a second after plugging it in while the system is running. So even despite of adjusting sound volume level for 3.5 mm devices, if possible, after plugging a 3.5 mm device in, its sound volume would be very high for a moment and then jumps down to the prepared level, which may be very unpleasant.
 
-The described problem can be solved with this project. The project uses an intelligent installation manager.
+The described problems can be solved with this project. The project uses an intelligent installation manager.
 
 ## Table of Contents
 
@@ -27,6 +27,7 @@ The described problem can be solved with this project. The project uses an intel
 
 ### Tested operating systems
 
+* Ubuntu 18.04
 * Ubuntu 16.04
 * Linux Mint 18.3
 * Linux Mint 18.2
