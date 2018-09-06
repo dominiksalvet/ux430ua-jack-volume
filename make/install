@@ -62,7 +62,7 @@ POSSIBLE SOLUTIONS:
 fi
 
 # check if installed
-if [ -f "$INSTALL_DIR/ux430ua-jack-volume" ]; then
+if [ -x "$INSTALL_DIR/ux430ua-jack-volume" ]; then
     echo 'The program is already installed in the given installation directory.'
     exit 0
 fi
@@ -73,11 +73,9 @@ if [ -z "$BUILD_DIR" ]; then
     exit 1
 fi
 
-# check if ux430ua-jack-volume file exists
-if [ ! -f "$BUILD_DIR/ux430ua-jack-volume" ]; then
-    echo "$0: '$BUILD_DIR/ux430ua-jack-volume' does not exist.
-POSSIBLE SOLUTIONS:
-  * Download the project again and repeat the action." >&2
+# check if build directory exists and is not empty
+if [ ! -d "$BUILD_DIR/" ] || [ -z "$(ls -A "$BUILD_DIR/")" ]; then
+    echo "$0: Build directory '$BUILD_DIR/' must exist and must not be empty." >&2
     exit 1
 fi
 
@@ -107,6 +105,7 @@ chmod a+x /etc/rc.local
 
 # copy the program itself
 cp "$BUILD_DIR/ux430ua-jack-volume" "$INSTALL_DIR/" &&
+chmod a+x "$INSTALL_DIR/ux430ua-jack-volume" &&
 # add script calling to '/etc/rc.local' file to run the program after boot
 sed -i -E -e '/'"$CONTAINS_EXIT_0"'/{s//'"'$INSTALL_DIR_ESCAPED"'\/ux430ua-jack-volume'"'"'\n&/; :add_line; N; badd_line}' /etc/rc.local &&
 # create ux430ua-jack-volume-caller for systemd
