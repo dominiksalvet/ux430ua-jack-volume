@@ -115,6 +115,7 @@ echo "#!/bin/sh
 chmod a+x /lib/systemd/system-sleep/ux430ua-jack-volume-caller || {
     echo "$0: Can't finish the installation.
 POSSIBLE SOLUTIONS:
+  * Try install ux430ua-jack-volume again.
   * Free up some storage space.
   * Contact a ux430ua-jack-volume developer." >&2
     exit 1

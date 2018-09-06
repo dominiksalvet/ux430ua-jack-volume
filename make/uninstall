@@ -71,6 +71,7 @@ sed -i -E -e '/^[[:blank:]]*'"('$INSTALL_DIR_ESCAPED.*\/ux430ua-jack-volume'|$IN
 rm -f "$INSTALL_DIR/ux430ua-jack-volume" || {
     echo "$0: Can't finish the uninstallation.
 POSSIBLE SOLUTIONS:
+  * Try uninstall ux430ua-jack-volume again.
   * Contact a ux430ua-jack-volume developer." >&2
     exit 1
 }
