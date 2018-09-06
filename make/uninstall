@@ -64,8 +64,13 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # remove program's caller from systemd
-rm /lib/systemd/system-sleep/ux430ua-jack-volume-caller
+rm -f /lib/systemd/system-sleep/ux430ua-jack-volume-caller &&
 # remove all lines calling the program from '/etc/rc.local'
-sed -i -E -e '/^[[:blank:]]*'"('$INSTALL_DIR_ESCAPED.*\/ux430ua-jack-volume'|$INSTALL_DIR_ESCAPED.*\/ux430ua-jack-volume)"'(| .*)$/d' /etc/rc.local
+sed -i -E -e '/^[[:blank:]]*'"('$INSTALL_DIR_ESCAPED.*\/ux430ua-jack-volume'|$INSTALL_DIR_ESCAPED.*\/ux430ua-jack-volume)"'(| .*)$/d' /etc/rc.local &&
 # remove the program itself
-rm "$INSTALL_DIR/ux430ua-jack-volume"
+rm -f "$INSTALL_DIR/ux430ua-jack-volume" || {
+    echo "$0: Can't finish the uninstallation.
+POSSIBLE SOLUTIONS:
+  * Contact a ux430ua-jack-volume developer." >&2
+    exit 1
+}
