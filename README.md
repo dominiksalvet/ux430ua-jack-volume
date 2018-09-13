@@ -40,16 +40,16 @@ This project is [gim](https://gitlab.com/dominiksalvet/gim) compliant since vers
 sudo gim install https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
 ```
 
-If it is required to **automatically uninstall your current release** with version 2.0.0 and higher, use the following command:
-
-```sh
-sudo gim uninstall https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
-```
-
 To **automatically update the project** from version 2.0.0 and higher to **it's latest version**, use the following command:
 
 ```sh
 sudo gim update https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
+```
+
+If it is required to **automatically uninstall your current release** with version 2.0.0 and higher, use the following command:
+
+```sh
+sudo gim uninstall https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
 ```
 
 ---
