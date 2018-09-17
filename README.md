@@ -9,7 +9,7 @@ The described problems can be solved with this project. The project is easy to i
 ## Table of Contents
 
 * [Install](#install)
-  * [System requirements](#system-requirements)
+  * [Software requirements](#software-requirements)
   * [Tested operating systems](#tested-operating-systems)
   * [Instructions](#instructions)
 * [Usage](#usage)
@@ -18,7 +18,7 @@ The described problems can be solved with this project. The project is easy to i
 
 ## Install
 
-### System requirements
+### Software requirements
 
 * **Linux** operating system
 * **systemd** init system
