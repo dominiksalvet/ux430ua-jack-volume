@@ -120,9 +120,3 @@ POSSIBLE SOLUTIONS:
   * Contact a ux430ua-jack-volume developer." >&2
     exit 1
 }
-
-# apply the changes immediately (it may not be successful because the program dependencies may be missing)
-echo 'Trying to apply the changes immediately.'
-"$INSTALL_DIR"/ux430ua-jack-volume
-
-exit 0

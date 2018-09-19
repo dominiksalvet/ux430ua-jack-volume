@@ -59,7 +59,7 @@ install-deps: # install dependencies of the project
 	./$(MAKE_DIR)/install-deps
 
 install-only: # install the project
-	./$(MAKE_DIR)/install '$(INSTALL_DIR)' '$(BUILD_DIR)'
+	./$(MAKE_DIR)/install-only '$(INSTALL_DIR)' '$(BUILD_DIR)'
 
 help: # default, show this help
 	$(call show_generated_help,makefile)
