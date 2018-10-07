@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 The changes not yet present in any release are listed in this section.
 
+## 2.1.0 (2018-10-07)
+
+### Added
+
+* The changes are once again applied immediately after the installation due to recent gim changes in the installation process.
+
 ## 2.0.3 (2018-09-19)
 
 ### Fixed
