@@ -53,13 +53,13 @@ all: help
 install: install-deps deploy # install the entire project automatically
 
 uninstall: # uninstall the project
-	./$(MAKE_DIR)/uninstall '$(INSTALL_DIR)'
+	@./$(MAKE_DIR)/uninstall '$(INSTALL_DIR)'
 
 install-deps: # install dependencies of the project
-	./$(MAKE_DIR)/install-deps
+	@./$(MAKE_DIR)/install-deps
 
 deploy: # deploy the project files
-	./$(MAKE_DIR)/deploy '$(INSTALL_DIR)' '$(BUILD_DIR)'
+	@./$(MAKE_DIR)/deploy '$(INSTALL_DIR)' '$(BUILD_DIR)'
 
 help: # default, show this help
 	$(call show_generated_help,makefile)

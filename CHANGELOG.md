@@ -12,6 +12,10 @@ The changes not yet present in any release are listed in this section.
 
 * The changes are once again applied immediately after the installation due to recent gim changes in the installation process.
 
+### Changed
+
+* Installation/uninstallation process now longer prints make recipes before executing them.
+
 ## 2.0.3 (2018-09-19)
 
 ### Fixed
