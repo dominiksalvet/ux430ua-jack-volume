@@ -18,7 +18,7 @@ COLUMN := column
 # directory definitions
 MAKE_DIR := make
 INSTALL_DIR := /usr/local/bin
-BUILD_DIR := build
+SRC_DIR := src
 
 #-------------------------------------------------------------------------------
 # HELP GENERATOR
@@ -59,7 +59,7 @@ install-deps: # install dependencies of the project
 	@./$(MAKE_DIR)/install-deps
 
 deploy: # deploy the project files
-	@./$(MAKE_DIR)/deploy '$(INSTALL_DIR)' '$(BUILD_DIR)'
+	@./$(MAKE_DIR)/deploy '$(INSTALL_DIR)' '$(SRC_DIR)'
 
 help: # default, show this help
 	$(call show_generated_help,makefile)
