@@ -1,0 +1,39 @@
+#-------------------------------------------------------------------------------
+# Copyright 2018 Dominik Salvet
+# SPDX-License-Identifier: MIT
+# https://gitlab.com/dominiksalvet/ux430ua-jack-volume
+#-------------------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------------------
+# SOFTWARE DEPENDENCIES
+#-------------------------------------------------------------------------------
+
+# list of required software
+SW_REQUIRED='command [ compgen complete'
+
+# check if some software is missing
+for i in $SW_REQUIRED; do
+    # software is missing if at least one piece of software is missing
+    if ! command -v "$i" > /dev/null; then
+        echo "$0: Required software $i is missing.
+POSSIBLE SOLUTIONS:
+  * Use command 'sudo apt install $i'." >&2
+        exit 1
+    fi
+done
+
+#-------------------------------------------------------------------------------
+# APPLY TAB COMPLETION
+#-------------------------------------------------------------------------------
+
+# DESCRIPTION:
+#   Prepare a hint consisting of words that can be used from the current part of
+#   word.
+_ux430ua-jack-volume() {
+    # generate hint from available ux430ua-jack-volume's action
+    COMPREPLY=($(compgen -W "-help -about -version" -- "${COMP_WORDS[COMP_CWORD]}"))
+}
+
+# assign a function to be called when TAB complete is required when ux430ua-jack-volume is used
+complete -F _ux430ua-jack-volume ux430ua-jack-volume
