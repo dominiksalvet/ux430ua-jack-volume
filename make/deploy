@@ -121,11 +121,12 @@ POSSIBLE SOLUTIONS:
     exit 1
 }
 
-# apply the changes immediately (if install-deps hasn't been run before, it may be unsuccessful)
+# try to apply all changes immediately (if install-deps hasn't been run before, it may be unsuccessful)
 "$INSTALL_DIR"/ux430ua-jack-volume > /dev/null 2>/dev/null || {
     echo "$0: Can't apply the changes immediately.
 POSSIBLE SOLUTIONS:
-  * Reboot your device." >&2
+  * Reboot your device.
+  * Install program dependencies." >&2
 }
 
 exit 0
