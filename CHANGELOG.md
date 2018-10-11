@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 The changes not yet present in any release are listed in this section.
 
-## 2.2.0 (2018-10-11)
+## 2.2.0 (2018-10-12)
 
 ### Added
 
@@ -20,7 +20,7 @@ The changes not yet present in any release are listed in this section.
 
 ### Changed
 
-* Installation/uninstallation process now longer prints make recipes before executing them.
+* Installation/uninstallation process no longer prints make recipes before executing them.
 
 ## 2.0.3 (2018-09-19)
 
