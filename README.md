@@ -34,11 +34,15 @@ The described problems can be solved with this project. The project is easy to i
 
 ### Instructions
 
-This project is [gim](https://gitlab.com/dominiksalvet/gim) compliant **since version 2.0.0**.
+This project is [gim](https://gitlab.com/dominiksalvet/gim) compliant **since version 2.0.0**. Install it by:
+
+```sh
+sudo gim install https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
+```
 
 ---
 
-If it is required to **update or uninstall project, whose version is lower than 2.0.0**, see the [README.md](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/blob/1.3.0/README.md) file of the 1.3.0 version, the latest version with previously used installation system.
+If it is required to work with project, whose **version is lower than 2.0.0**, see the [README.md](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/blob/1.3.0/README.md) file of the 1.3.0 version, the latest version with previously used installation system.
 
 ## Usage
 
