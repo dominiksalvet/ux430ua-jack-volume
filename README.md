@@ -52,7 +52,7 @@ The program is executed after the installation for the first time. Then, **it is
 sudo ux430ua-jack-volume
 ```
 
-## Contribute
+## Contributing
 
 See the [*CONTRIBUTING.md*](CONTRIBUTING.md) file for details.
 
