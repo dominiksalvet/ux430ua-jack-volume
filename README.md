@@ -1,4 +1,4 @@
-# ASUS ZenBook UX430UA Jack Volume Setup *(ux430ua-jack-volume)*
+# ux430ua-jack-volume
 
 > Fix low 3.5 mm jack output audio volume of ASUS ZenBook UX430UA on Linux.
 
@@ -37,7 +37,7 @@ The described problems can be solved with this project. The project is easy to i
 This project is [gim](https://gitlab.com/dominiksalvet/gim) compliant **since version 2.0.0**. Install it by:
 
 ```sh
-sudo gim install https://gitlab.com/dominiksalvet/ux430ua-jack-volume.git
+sudo gim install gitlab.com/dominiksalvet/ux430ua-jack-volume
 ```
 
 ---
