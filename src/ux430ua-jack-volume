@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------
 # Copyright 2017-2019 Dominik Salvet
 # SPDX-License-Identifier: MIT
-# https://gitlab.com/dominiksalvet/ux430ua-jack-volume
+# https://github.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 
 
@@ -48,9 +48,9 @@ OPTION:
 ABOUT_MESSAGE="ux430ua-jack-volume $VERSION
 Fix low volume of ASUS ZenBook UX430UA running Linux.
 
-Copy"'right 2017-2018 Dominik Salvet
+Copy"'right 2017-2019 Dominik Salvet
 SPDX License Identifier: MIT
-https://gitlab.com/dominiksalvet/ux430ua-jack-volume'
+https://github.com/dominiksalvet/ux430ua-jack-volume'
 
 #-------------------------------------------------------------------------------
 # PROCESSING PARAMETERS

@@ -1,6 +1,6 @@
 # ux430ua-jack-volume
 
-[![gim ready](https://img.shields.io/badge/gim-ready-571997.svg)](https://gitlab.com/dominiksalvet/gim)
+[![gim ready](https://img.shields.io/badge/gim-ready-571997.svg)](https://github.com/dominiksalvet/gim)
 [![reuse compliant](https://reuse.software/badge/reuse-compliant.svg)](https://reuse.software/)
 [![standard-readme compliant](https://img.shields.io/badge/readme_style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
 
@@ -38,15 +38,15 @@ The described problems can be solved with this project. The project is easy to i
 
 ### Instructions
 
-This project is [gim](https://gitlab.com/dominiksalvet/gim) ready **since version 2.0.0**. Install it by:
+This project is [gim](https://github.com/dominiksalvet/gim) ready **since version 2.0.0**. Install it by:
 
 ```sh
-sudo gim install gitlab.com/dominiksalvet/ux430ua-jack-volume
+sudo gim install github.com/dominiksalvet/ux430ua-jack-volume
 ```
 
 ---
 
-If it is required to work with project, whose **version is lower than 2.0.0**, see the [README.md](https://gitlab.com/dominiksalvet/ux430ua-jack-volume/blob/1.3.0/README.md) file of the 1.3.0 version, the latest version with previously used installation system.
+If it is required to work with project, whose **version is lower than 2.0.0**, see the [README.md](https://github.com/dominiksalvet/ux430ua-jack-volume/blob/1.3.0/README.md) file of the 1.3.0 version, the latest version with previously used installation system.
 
 ## Usage
 
@@ -62,4 +62,6 @@ See the [*CONTRIBUTING.md*](CONTRIBUTING.md) file for details.
 
 ## License
 
-Licensing policy of this project is compliant with [REUSE Practices](https://reuse.software/practices/2.0/). Therefore, the license of a file of this project is determined by a [SPDX](https://spdx.org/) License Identifier or by the [*debian/copyright*](debian/copyright) file content.
+Licensing policy of this project is compliant with [REUSE Practices](https://reuse.software/practices/2.0/).
+
+The preferred license is the **MIT License** as stated in the [*LICENSE.txt*](LICENSE.txt) file.
