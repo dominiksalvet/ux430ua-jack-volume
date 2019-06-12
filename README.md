@@ -17,7 +17,7 @@ The described problems can be solved with this project. The project is easy to i
   * [Tested operating systems](#tested-operating-systems)
   * [Instructions](#instructions)
 * [Usage](#usage)
-* [Contribute](#contribute)
+* [Contributing](#contributing)
 * [License](#license)
 
 ## Install
