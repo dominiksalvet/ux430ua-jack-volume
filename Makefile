@@ -65,4 +65,4 @@ deploy: # deploy the project
 	@./$(MAKE_DIR)/deploy '$(INSTALL_DIR)' '$(SRC_DIR)'
 
 help: # show this help
-	$(call show_generated_help,makefile)
+	$(call show_generated_help,Makefile)
