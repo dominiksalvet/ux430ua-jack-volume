@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#-------------------------------------------------------------------------------
+# Copyright 2019 Dominik Salvet
+# SPDX-License-Identifier: MIT
+# https://github.com/dominiksalvet/ux430ua-jack-volume
+#-------------------------------------------------------------------------------
+
+
+# check whether dependencies can be installed automatically
+if command -v apt-get > /dev/null; then
+    # install alsa-tools package
+    apt-get install -y alsa-tools > /dev/null
+fi

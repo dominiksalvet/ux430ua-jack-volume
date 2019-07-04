@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#-------------------------------------------------------------------------------
+# Copyright 2019 Dominik Salvet
+# SPDX-License-Identifier: MIT
+# https://github.com/dominiksalvet/ux430ua-jack-volume
+#-------------------------------------------------------------------------------
+
+
+# check whether /etc/rc.local file exists
+if [ ! -f /etc/rc.local ]; then
+    echo '#!/bin/sh -e
+
+exit 0' > /etc/rc.local
+# ensure that there is always a successful exit
+elif ! grep -q '^exit 0$' /etc/rc.local; then
+    echo 'exit 0' >> /etc/rc.local
+fi &&
+
+# run ux430ua-jack-volume after boot
+sed 's/^exit 0$/ux430ua-jack-volume\nexit 0/' /etc/rc.local > /etc/rc.local.tmp &&
+chmod +x /etc/rc.local.tmp &&
+mv /etc/rc.local.tmp /etc/rc.local &&
+
+# try to apply changes immediately
+{ ux430ua-jack-volume; true; } # not a problem if it fails

@@ -1,0 +1,3 @@
+src/ux430ua-jack-volume /usr/local/bin
+src/ux430ua-jack-volume-completion /etc/bash_completion.d
+src/ux430ua-jack-volume-caller /lib/systemd/system-sleep
