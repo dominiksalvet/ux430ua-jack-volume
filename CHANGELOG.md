@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 * Support for [GitPack](https://github.com/dominiksalvet/gitpack).
 
+### Removed
+
+* Support for gim has been removed.
+* *Makefile* has been removed.
+
 The changes not yet present in any release are listed in this section.
 
 ## 2.3.1 (2019-05-20)

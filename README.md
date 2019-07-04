@@ -1,6 +1,6 @@
 # ux430ua-jack-volume
 
-[![gim ready](https://img.shields.io/badge/gim-ready-571997.svg)](https://github.com/dominiksalvet/gim)
+[![GitPack](https://img.shields.io/badge/Git-Pack-571997.svg)](https://github.com/dominiksalvet/gitpack)
 [![reuse compliant](https://reuse.software/badge/reuse-compliant.svg)](https://reuse.software/)
 [![standard-readme compliant](https://img.shields.io/badge/readme_style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
 
@@ -14,7 +14,6 @@ The described problems can be solved with this project. The project is easy to i
 
 * [Install](#install)
   * [Software requirements](#software-requirements)
-  * [Tested operating systems](#tested-operating-systems)
   * [Instructions](#instructions)
 * [Usage](#usage)
 * [Contributing](#contributing)
@@ -24,29 +23,17 @@ The described problems can be solved with this project. The project is easy to i
 
 ### Software requirements
 
-* **Linux** operating system
 * **systemd** init system
-* **Debian** packaging system
-* **ALSA** framework
-
-### Tested operating systems
-
-* Ubuntu 18.04
-* Ubuntu 16.04
-* Linux Mint 18.3
-* Linux Mint 18.2
+* **hda-verb** command
+  * If your system has `apt-get`, it will be installed automatically.
 
 ### Instructions
 
-This project is [gim ready](https://github.com/dominiksalvet/gim) **since version 2.0.0**. Install/update it by:
+This project uses [GitPack](https://github.com/dominiksalvet/gitpack). Global installation/update:
 
 ```sh
-sudo gim install github.com/dominiksalvet/ux430ua-jack-volume
+sudo gitpack install github.com/dominiksalvet/ux430ua-jack-volume
 ```
-
----
-
-If it is required to work with project, whose **version is lower than 2.0.0**, see the [README.md](https://github.com/dominiksalvet/ux430ua-jack-volume/blob/1.3.0/README.md) file of the 1.3.0 version, the latest version with previously used installation system.
 
 ## Usage
 

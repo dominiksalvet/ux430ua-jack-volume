@@ -15,14 +15,6 @@ Files: SECURITY.md
 Copyright: Copyright 2019 Dominik Salvet
 License: MIT
 
-Files: gim/unsupported
-Copyright: Copyright 2018-2019 Dominik Salvet
-License: MIT
-
-Files: gim/mirrors
-Copyright: Copyright 2019 Dominik Salvet
-License: MIT
-
 Files: .github/*
 Copyright: Copyright 2019 Dominik Salvet
 License: MIT
