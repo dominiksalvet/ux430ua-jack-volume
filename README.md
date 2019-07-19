@@ -24,6 +24,7 @@ The described problems can be solved with this project. The project is easy to i
 ### Software requirements
 
 * **systemd** init system
+  * The rc.local service must be enabled.
 * **hda-verb** command
   * If your system has `apt-get`, it will be installed automatically.
 
