@@ -8,6 +8,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 The changes not yet present in any release are listed in this section.
 
+## 2.4.1 (2019-10-15)
+
+### Fixed
+
+* Tab completion is no longer able to prevent from launching a terminal emulator.
+
 ## 2.4.0 (2019-07-04)
 
 ### Added
