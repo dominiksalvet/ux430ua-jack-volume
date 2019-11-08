@@ -14,8 +14,10 @@
 #   Prepare a hint consisting of words that can be used from the current part of
 #   word.
 _ux430ua-jack-volume() {
+    local WORDS='-help -about -version lolek' &&
+
     # generate hint from available ux430ua-jack-volume's action
-    COMPREPLY=($(compgen -W "-help -about -version" -- "${COMP_WORDS[COMP_CWORD]}"))
+    mapfile -t COMPREPLY < <(compgen -W "$WORDS" -- "${COMP_WORDS[COMP_CWORD]}")
 }
 
 # assign a function to be called when TAB complete is required when ux430ua-jack-volume is used
