@@ -5,7 +5,6 @@
 # github.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 
-
 # check whether /etc/rc.local file exists
 if [ ! -f /etc/rc.local ]; then
     echo '#!/bin/sh -e

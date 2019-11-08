@@ -5,7 +5,6 @@
 # github.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 
-
 # stop running ux430ua-jack-volume after boot
 grep -v '^ux430ua-jack-volume$' /etc/rc.local > /etc/rc.local.tmp &&
 chmod +x /etc/rc.local.tmp &&

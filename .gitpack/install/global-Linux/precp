@@ -5,7 +5,6 @@
 # github.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 
-
 # check whether dependencies can be installed automatically
 if command -v apt-get > /dev/null; then
     # install alsa-tools package
