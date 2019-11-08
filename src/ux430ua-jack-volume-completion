@@ -1,7 +1,8 @@
+#!/bin/bash
+
 #-------------------------------------------------------------------------------
 # Copyright 2018-2019 Dominik Salvet
-# SPDX-License-Identifier: MIT
-# https://github.com/dominiksalvet/ux430ua-jack-volume
+# github.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 
 
