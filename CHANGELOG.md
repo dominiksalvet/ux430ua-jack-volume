@@ -12,6 +12,10 @@ The changes not yet present in any release are listed in this section.
 
 * Error messages have been simplified and do not provide possible solutions anymore.
 
+### Fixed
+
+* Tab completion no longer includes `lolek` as a hint.
+
 ## 2.4.2 (2019-11-08)
 
 ### Changed
