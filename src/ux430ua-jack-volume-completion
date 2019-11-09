@@ -13,7 +13,7 @@
 #   Prepare a hint consisting of words that can be used from the current part of
 #   word.
 _ux430ua-jack-volume() {
-    local WORDS='-help -about -version lolek' &&
+    local WORDS='-help -about -version' &&
 
     # generate hint from available ux430ua-jack-volume's action
     mapfile -t COMPREPLY < <(compgen -W "$WORDS" -- "${COMP_WORDS[COMP_CWORD]}")
