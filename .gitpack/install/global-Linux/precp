@@ -7,6 +7,11 @@
 
 # check whether dependencies can be installed automatically
 if command -v apt-get > /dev/null; then
-    # install alsa-tools package
-    apt-get install -y alsa-tools > /dev/null
+    if [ "$OFFLINE_MODE" = true ]; then # check if GitPack is in offline mode
+        if ! dpkg -l alsa-tools > /dev/null 2>&1; then # check if installed
+            echo 'cannot install alsa-tools in offline mode' >&2; exit 1
+        fi
+    else
+        apt-get install -y alsa-tools > /dev/null # install alsa-tools package
+    fi
 fi
