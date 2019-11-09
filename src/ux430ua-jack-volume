@@ -60,8 +60,7 @@ done
 
 # check if character device file for sound driving exists
 if [ ! -c /dev/snd/hwC0D0 ]; then
-    echo "$0: Character device file '/dev/snd/hwC0D0' doesn't exist." >&2
-    exit 1
+    echo "$0: Character device '/dev/snd/hwC0D0' does not exist." >&2; exit 1
 fi
 
 # check if running as root
