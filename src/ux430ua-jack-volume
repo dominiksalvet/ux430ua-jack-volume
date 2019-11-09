@@ -16,8 +16,7 @@ SW_REQUIRED='command echo [ id hda-verb'
 for i in $SW_REQUIRED; do
     # software is missing if at least one piece of software is missing
     if ! command -v "$i" > /dev/null; then
-        echo "$0: Required software $i is missing." >&2
-        exit 1
+        echo "$0: Required software $i is missing." >&2; exit 1
     fi
 done
 
@@ -48,22 +47,10 @@ github.com/dominiksalvet/ux430ua-jack-volume"
 # processing each parameter separately
 for i in "$@"; do
     case "$i" in
-        -help)
-            echo "$HELP_MESSAGE"
-            exit 0
-            ;;
-        -about)
-            echo "$ABOUT_MESSAGE"
-            exit 0
-            ;;
-        -version)
-            echo "$VERSION"
-            exit 0
-            ;;
-        *)
-            echo "$0: The option '$i' was not recognized." >&2
-            exit 1
-            ;;
+        -help) echo "$HELP_MESSAGE"; exit ;;
+        -about) echo "$ABOUT_MESSAGE"; exit ;;
+        -version) echo "$VERSION"; exit ;;
+        *) echo "$0: The option '$i' was not recognized." >&2; exit 1 ;;
     esac
 done
 
@@ -79,8 +66,7 @@ fi
 
 # check if running as root
 if [ "$(id -u)" -ne 0 ]; then
-    echo "$0: Please run as root." >&2
-    exit 1
+    echo "$0: Please run as root." >&2; exit 1
 fi
 
 # set up output audio jack volume level
