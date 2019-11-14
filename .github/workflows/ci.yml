@@ -8,6 +8,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Analysis
       run: |
-        false
-        true
-        echo hello
+        shellcheck --version
+        shellcheck src/*
+        shellcheck .gitpack/install/global/postcp .gitpack/install/global/precp .gitpack/install/global/prerm
