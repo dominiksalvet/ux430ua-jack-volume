@@ -7,4 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Analysis
-      run: shellcheck --version
+      run: false
+      
+    - name: Next
+      run: true
