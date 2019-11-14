@@ -2,11 +2,10 @@ name: CI
 on: push
 
 jobs:
-  build:
+  Analysis:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Analysis
-      run: |
+    - run: |
         shellcheck --version
         shellcheck src/*
