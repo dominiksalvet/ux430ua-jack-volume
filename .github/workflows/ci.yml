@@ -6,7 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: shellcheck
-      run: |
-        shellcheck --version
-        shellcheck src/*
+
+    - name: Check shellcheck
+      run: shellcheck --version
+
+    - name: Check source
+      run: shellcheck src/*
+      
