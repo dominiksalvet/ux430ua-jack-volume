@@ -9,4 +9,3 @@ jobs:
       run: |
         shellcheck --version
         shellcheck src/*
-        shellcheck .gitpack/install/global/postcp .gitpack/install/global/precp .gitpack/install/global/prerm
