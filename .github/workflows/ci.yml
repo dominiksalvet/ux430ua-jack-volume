@@ -10,3 +10,4 @@ jobs:
       run: |
         false
         true
+        echo hello
