@@ -50,7 +50,7 @@ for opt in "$@"; do
         -help) echo "$HELP_MESSAGE"; exit ;;
         -about) echo "$ABOUT_MESSAGE"; exit ;;
         -version) echo "$VERSION"; exit ;;
-        *) echo "$0: The option '$i' was not recognized." >&2; exit 1 ;;
+        *) echo "$0: The option '$opt' was not recognized." >&2; exit 1 ;;
     esac
 done
 
