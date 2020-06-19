@@ -13,7 +13,7 @@ The described problems can be solved with this project.
 ## Table of Contents
 
 * [Install](#install)
-  * [Software requirements](#software-requirements)
+  * [Software Requirements](#software-requirements)
   * [Instructions](#instructions)
 * [Usage](#usage)
 * [Contributing](#contributing)
@@ -21,7 +21,7 @@ The described problems can be solved with this project.
 
 ## Install
 
-### Software requirements
+### Software Requirements
 
 * **systemd** init system
   * The rc.local service must be enabled.
