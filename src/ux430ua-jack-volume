@@ -1,8 +1,8 @@
 #!/bin/sh
 
 #-------------------------------------------------------------------------------
-# Copyright 2017-2019 Dominik Salvet
-# github.com/dominiksalvet/ux430ua-jack-volume
+# Copyright 2017-2020 Dominik Salvet
+# https://github.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
@@ -37,8 +37,8 @@ OPTION:
 ABOUT_MESSAGE="ux430ua-jack-volume $VERSION
 Fix low volume of ASUS ZenBook UX430UA running Linux.
 
-Copyright 2017-2019 Dominik Salvet
-github.com/dominiksalvet/ux430ua-jack-volume"
+Copyright 2017-2020 Dominik Salvet
+https://github.com/dominiksalvet/ux430ua-jack-volume"
 
 #-------------------------------------------------------------------------------
 # PROCESSING PARAMETERS
