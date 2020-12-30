@@ -12,6 +12,10 @@ The changes not yet present in any release are listed in this section.
 
 * The support for GitHub Actions CI has been added.
 
+### Removed
+
+* Removed tab completion for Bash shells as it is unnecessary.
+
 ## 2.5.0 (2019-11-09)
 
 ### Added
