@@ -23,10 +23,8 @@ The described problems can be solved with this project.
 
 ### Software Requirements
 
-* **systemd** init system
-  * The rc.local service must be enabled.
-* **hda-verb** command
-  * If your system has `apt-get`, it will be installed automatically.
+* **systemd** suite
+* **hda-verb** tool (see below)
 
 ### Instructions
 
@@ -35,6 +33,8 @@ This project uses [GitPack](https://github.com/dominiksalvet/gitpack). Global in
 ```sh
 sudo gitpack install github.com/dominiksalvet/ux430ua-jack-volume
 ```
+
+> If your system has APT, GitPack will install hda-verb automatically.
 
 ## Usage
 

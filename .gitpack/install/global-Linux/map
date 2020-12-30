@@ -1,2 +1,0 @@
-src/ux430ua-jack-volume /usr/local/bin
-src/ux430ua-jack-volume-caller /lib/systemd/system-sleep

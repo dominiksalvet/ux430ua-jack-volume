@@ -1,0 +1,17 @@
+#-------------------------------------------------------------------------------
+# Copyright 2020 Dominik Salvet
+# https://github.com/dominiksalvet/ux430ua-jack-volume
+#-------------------------------------------------------------------------------
+
+[Unit]
+Description=Executes ux430ua-jack-volume whenever necessary.
+Before=multi-user.target
+After=suspend.target suspend-then-hibernate.target hibernate.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/ux430ua-jack-volume
+
+[Install]
+WantedBy=multi-user.target suspend.target
+WantedBy=suspend-then-hibernate.target hibernate.target

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+#-------------------------------------------------------------------------------
+# Copyright 2019-2020 Dominik Salvet
+# https://github.com/dominiksalvet/ux430ua-jack-volume
+#-------------------------------------------------------------------------------
+
+if command -v apt-get > /dev/null; then
+    echo 'installing alsa-tools package'
+    apt-get install -y alsa-tools > /dev/null
+fi &&
+
+echo 'copying files' &&
+mkdir -p /usr/local/bin/ \
+         /etc/systemd/system/ &&
+cp src/ux430ua-jack-volume /usr/local/bin/ &&
+cp .install/u430jv.service /etc/systemd/system/ || exit
+
+echo 'enabling systemd service'
+systemctl -q enable u430jv.service # may fail
+
+echo 'applying jack volume changes'
+if ! /usr/local/bin/ux430ua-jack-volume; then # may not be in PATH
+    echo 'failed to apply changes now; reboot may help'
+fi # optional execution always succeeds

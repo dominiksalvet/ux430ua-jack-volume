@@ -12,6 +12,11 @@ The changes not yet present in any release are listed in this section.
 
 * The support for GitHub Actions CI has been added.
 
+### Changed
+
+* Adapt to new GitPack 1.0.0 installation format.
+* Replaced `/etc/rc.local` logic with a simple systemd service.
+
 ### Removed
 
 * Removed tab completion for Bash shells as it is unnecessary.
