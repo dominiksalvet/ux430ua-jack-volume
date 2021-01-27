@@ -1,13 +1,13 @@
 #!/bin/sh
 
 #-------------------------------------------------------------------------------
-# Copyright 2019-2020 Dominik Salvet
+# Copyright 2019-2021 Dominik Salvet
 # https://github.com/dominiksalvet/ux430ua-jack-volume
 #-------------------------------------------------------------------------------
 
-echo 'disabling systemd service'
+echo 'disabling systemd service' &&
 systemctl -q disable u430jv.service
 
-echo 'removing files'
+echo 'removing files' &&
 rm -f /usr/local/bin/ux430ua-jack-volume \
       /etc/systemd/system/u430jv.service
